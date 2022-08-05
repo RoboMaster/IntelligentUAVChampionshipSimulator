@@ -1,0 +1,869 @@
+﻿Log file open, 08/05/22 10:38:34
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogPakFile: Display: Found Pak file ../../../contest2/Content/Paks/contest2-LinuxNoEditor.pak attempting to mount.
+LogPakFile: Display: Mounting pak file ../../../contest2/Content/Paks/contest2-LinuxNoEditor.pak.
+LogPakFile: PakFile PrimaryIndexSize=59110
+LogPakFile: PakFile PathHashIndexSize=63263
+LogPakFile: PakFile FullDirectoryIndexSize=98876
+LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile '../../../contest2/Content/Paks/contest2-LinuxNoEditor.pak' (chunk index -1, root '../../../') mounted
+LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:../../../ File:../../../contest2/Content/Paks/contest2-LinuxNoEditor.pak)
+LogPakFile: OnPakFileMounted2Time == 0.000006
+LogPlatformFile: Using cached read wrapper
+LogTaskGraph: Started task graph with 5 named threads and 17 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.052131
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +8:00, Platform Override: ''
+LogInit: Display: Loading text-based GConfig....
+LogPluginManager: Mounting plugin AirSim
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin AISupport
+LogPluginManager: Mounting plugin EnvironmentQueryEditor
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin CameraShakePreviewer
+LogPluginManager: Mounting plugin GameplayCameras
+LogPluginManager: Mounting plugin TemplateSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin OodleData
+LogPluginManager: Mounting plugin OodleNetwork
+LogPluginManager: Mounting plugin AnimationSharing
+LogPluginManager: Mounting plugin SignificanceManager
+LogPluginManager: Mounting plugin PluginUtils
+LogPluginManager: Mounting plugin PropertyAccessEditor
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GeometryMode
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin VariantManagerContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin GeometryCache
+LogPluginManager: Mounting plugin AutomationUtils
+LogPluginManager: Mounting plugin ScreenshotTools
+LogPluginManager: Mounting plugin BackChannel
+LogPluginManager: Mounting plugin ChaosClothEditor
+LogPluginManager: Mounting plugin ChaosCloth
+LogPluginManager: Mounting plugin ChaosEditor
+LogPluginManager: Mounting plugin PlanarCut
+LogPluginManager: Mounting plugin GeometryProcessing
+LogPluginManager: Mounting plugin EditableMesh
+LogPluginManager: Mounting plugin GeometryCollectionPlugin
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin ChaosSolverPlugin
+LogPluginManager: Mounting plugin ChaosNiagara
+LogPluginManager: Mounting plugin Niagara
+LogPluginManager: Mounting plugin PythonScriptPlugin
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin MotoSynth
+LogPluginManager: Mounting plugin PlatformCrypto
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin MeshPainting
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin LauncherChunkInstaller
+LogPluginManager: Mounting plugin ActorLayerUtilities
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleImageUtils
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AssetTags
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin ChunkDownloader
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GooglePAD
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OpenXREyeTracker
+LogPluginManager: Mounting plugin OpenXR
+LogPluginManager: Mounting plugin OpenXRHandTracking
+LogPluginManager: Mounting plugin LiveLink
+LogPluginManager: Mounting plugin Takes
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SoundFields
+LogPluginManager: Mounting plugin Synthesis
+LogPluginManager: Mounting plugin AudioSynesthesia
+LogPluginManager: Mounting plugin WebMMoviePlayer
+LogPluginManager: Mounting plugin WebMMedia
+LogInit: Using libcurl 7.65.3-DEV
+LogInit:  - built for x86_64-unknown-linux-gnu
+LogInit:  - supports SSL with OpenSSL/1.1.1c
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_TLSAUTH_SRP
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogOnline: OSS: Creating online subsystem instance for: NULL
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+LogInit: Build: ++UE4+Release-4.27-CL-18319896
+LogInit: Engine Version: 4.27.2-18319896+++UE4+Release-4.27
+LogInit: Compatible Engine Version: 4.27.0-17155196+++UE4+Release-4.27
+LogInit: Net CL: 17155196
+LogInit: OS: GenericOSVersionLabel (GenericOSSubVersionLabel), CPU: Intel(R) Core(TM) i9-7900X CPU @ 3.30GHz, GPU: GenericGPUBrand
+LogInit: Compiled (64-bit): Nov 30 2021 07:42:46
+LogInit: Compiled with Clang: 11.0.1 (https://github.com/llvm/llvm-project 43ff75f2c3feef64f9d73328230d34dac8832a91)
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.27
+LogInit: Command Line:  -WINDOWED -ResX=640 -ResY=480
+LogInit: Base Directory: /home/jakeluo/Documents/RM_inside_repos/simulator_roswrapper/stage1_RGBD/contest2/Binaries/Linux/
+LogInit: Allocator: binned2
+LogInit: Installed Engine Build: 0
+LogDevObjectVersion: Number of dev versions registered: 29
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 14
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 47
+LogDevObjectVersion:   FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 1
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+LogDevObjectVersion:   Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogDevObjectVersion:   Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+LogDevObjectVersion:   Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+LogInit: Presizing for max 2097152 objects, including 1 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [../../../contest2/Saved/Config/LinuxNoEditor/Engine.ini]
+LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
+LogStreaming: Display: Async Loading initialized: Event Driven Loader: true, Async Loading Thread: false, Async Post Load: true
+LogInit: Object subsystem initialized
+LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
+LogConfig: Setting CVar [[r.setres:1280x720]]
+LogConfig: Setting CVar [[fx.NiagaraAllowRuntimeScalabilityChanges:1]]
+[2022.08.05-02.38.34:234][  0]LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
+[2022.08.05-02.38.34:234][  0]LogConfig: Setting CVar [[r.setres:1280x720]]
+[2022.08.05-02.38.34:234][  0]LogConfig: Setting CVar [[fx.NiagaraAllowRuntimeScalabilityChanges:1]]
+[2022.08.05-02.38.34:234][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [../../../contest2/Saved/Config/LinuxNoEditor/Engine.ini]
+[2022.08.05-02.38.34:234][  0]LogConfig: Setting CVar [[r.GPUCrashDebugging:0]]
+[2022.08.05-02.38.34:234][  0]LogConfig: Setting CVar [[r.DefaultFeature.AutoExposure:1]]
+[2022.08.05-02.38.34:234][  0]LogConfig: Setting CVar [[r.PostProcessing.PropagateAlpha:0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[r.DefaultFeature.AutoExposure.Bias:0.000000]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [../../../contest2/Saved/Config/LinuxNoEditor/Engine.ini]
+[2022.08.05-02.38.34:235][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [../../../contest2/Saved/Config/LinuxNoEditor/Engine.ini]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [../../../contest2/Saved/Config/LinuxNoEditor/Engine.ini]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.MaxObjectsNotConsideredByGC:1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.SizeOfPermanentObjectPool:0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.FlushStreamingOnGC:0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.NumRetriesBeforeForcingGC:10]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.AllowParallelGC:1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.MaxObjectsInEditor:25165824]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.IncrementalBeginDestroyEnabled:1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.CreateGCClusters:1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.MinGCClusterSize:5]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.ActorClusteringEnabled:0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.BlueprintClusteringEnabled:0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Setting CVar [[gc.MultithreadedDestructionEnabled:1]]
+[2022.08.05-02.38.34:235][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [../../../contest2/Saved/Config/LinuxNoEditor/Engine.ini]
+[2022.08.05-02.38.34:235][  0]LogInit: Initializing SDL.
+[2022.08.05-02.38.34:266][  0]LogInit: Initialized SDL 2.0.12 revision: 13609 (hg-13609:34cc7d3b69d3) (compiled against 2.0.12)
+[2022.08.05-02.38.34:266][  0]LogInit: Using SDL video driver 'x11'
+[2022.08.05-02.38.34:266][  0]LogInit: Display metrics:
+[2022.08.05-02.38.34:266][  0]LogInit:   PrimaryDisplayWidth: 1920
+[2022.08.05-02.38.34:266][  0]LogInit:   PrimaryDisplayHeight: 1080
+[2022.08.05-02.38.34:266][  0]LogInit:   PrimaryDisplayWorkAreaRect:
+[2022.08.05-02.38.34:266][  0]LogInit:     Left=72, Top=27, Right=1920, Bottom=1080
+[2022.08.05-02.38.34:266][  0]LogInit:   VirtualDisplayRect:
+[2022.08.05-02.38.34:266][  0]LogInit:     Left=72, Top=27, Right=3840, Bottom=1376
+[2022.08.05-02.38.34:266][  0]LogInit:   TitleSafePaddingSize: X=0.000 Y=0.000 Z=0.000 W=0.000
+[2022.08.05-02.38.34:266][  0]LogInit:   ActionSafePaddingSize: X=0.000 Y=0.000 Z=0.000 W=0.000
+[2022.08.05-02.38.34:266][  0]LogInit:   Number of monitors: 2
+[2022.08.05-02.38.34:266][  0]LogInit:     Monitor 0
+[2022.08.05-02.38.34:266][  0]LogInit:       Name: PHL 241S8Q 24"
+[2022.08.05-02.38.34:266][  0]LogInit:       ID: display0
+[2022.08.05-02.38.34:266][  0]LogInit:       NativeWidth: 1920
+[2022.08.05-02.38.34:266][  0]LogInit:       NativeHeight: 1080
+[2022.08.05-02.38.34:266][  0]LogInit:       bIsPrimary: true
+[2022.08.05-02.38.34:266][  0]LogInit:     Monitor 1
+[2022.08.05-02.38.34:266][  0]LogInit:       Name: DELL E2418HN 24"
+[2022.08.05-02.38.34:266][  0]LogInit:       ID: display1
+[2022.08.05-02.38.34:266][  0]LogInit:       NativeWidth: 1920
+[2022.08.05-02.38.34:266][  0]LogInit:       NativeHeight: 1080
+[2022.08.05-02.38.34:266][  0]LogInit:       bIsPrimary: false
+[2022.08.05-02.38.34:266][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:266][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2022.08.05-02.38.34:266][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2022.08.05-02.38.34:266][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:266][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2022.08.05-02.38.34:266][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:266][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2022.08.05-02.38.34:266][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[fx.Niagara.QualityLevel:3]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2022.08.05-02.38.34:267][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2022.08.05-02.38.34:267][  0]LogLinux: Selected Device Profile: [LinuxNoEditor]
+[2022.08.05-02.38.34:267][  0]LogInit: Applying CVar settings loaded from the selected device profile: [LinuxNoEditor]
+[2022.08.05-02.38.34:268][  0]LogHAL: Display: Platform has ~ 4 GB [33353097216 / 4294967296 / 32], which maps to Smallest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.RHICmdBypass:0]]
+[2022.08.05-02.38.34:268][  0]LogInit: Going up to parent DeviceProfile [Linux]
+[2022.08.05-02.38.34:268][  0]LogInit: Going up to parent DeviceProfile []
+[2022.08.05-02.38.34:268][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[fx.Niagara.QualityLevel:3]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2022.08.05-02.38.34:268][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2022.08.05-02.38.34:269][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2022.08.05-02.38.34:269][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2022.08.05-02.38.34:269][  0]LogConfig: Setting CVar [[net.UseAdaptiveNetUpdateFrequency:0]]
+[2022.08.05-02.38.34:269][  0]LogConfig: Setting CVar [[p.chaos.AllowCreatePhysxBodies:1]]
+[2022.08.05-02.38.34:269][  0]LogConfig: Setting CVar [[fx.SkipVectorVMBackendOptimizations:1]]
+[2022.08.05-02.38.34:269][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [../../../contest2/Saved/Config/LinuxNoEditor/Engine.ini]
+[2022.08.05-02.38.34:269][  0]LogConfig: Setting CVar [[g.TimeoutForBlockOnRenderFence:60000]]
+[2022.08.05-02.38.34:269][  0]LogInit: Unix hardware info:
+[2022.08.05-02.38.34:269][  0]LogInit:  - we are the first instance of this executable
+[2022.08.05-02.38.34:269][  0]LogInit:  - this process' id (pid) is 3640340, parent process' id (ppid) is 3640333
+[2022.08.05-02.38.34:269][  0]LogInit:  - we are not running under debugger
+[2022.08.05-02.38.34:269][  0]LogInit:  - machine network name is 'jakeluo-desktop'
+[2022.08.05-02.38.34:269][  0]LogInit:  - user name is 'jakeluo' (jakeluo)
+[2022.08.05-02.38.34:269][  0]LogInit:  - we're logged in locally
+[2022.08.05-02.38.34:269][  0]LogInit:  - we're running with rendering
+[2022.08.05-02.38.34:269][  0]LogInit:  - CPU: GenuineIntel 'Intel(R) Core(TM) i9-7900X CPU @ 3.30GHz' (signature: 0x50654)
+[2022.08.05-02.38.34:269][  0]LogInit:  - Number of physical cores available for the process: 10
+[2022.08.05-02.38.34:269][  0]LogInit:  - Number of logical cores available for the process: 20
+[2022.08.05-02.38.34:269][  0]LogInit:  - Cache line size: 64
+[2022.08.05-02.38.34:269][  0]LogInit:  - Memory allocator used: binned2
+[2022.08.05-02.38.34:269][  0]LogInit:  - This binary is optimized with LTO: no, PGO: no, instrumented for PGO data collection: no
+[2022.08.05-02.38.34:269][  0]LogInit:  - This is an internal build.
+[2022.08.05-02.38.34:269][  0]LogCore: Benchmarking clocks:
+[2022.08.05-02.38.34:269][  0]LogCore:  - CLOCK_MONOTONIC (id=1) can sustain 66316690 (66317K, 66M) calls per second without zero deltas.
+[2022.08.05-02.38.34:269][  0]LogCore:  - CLOCK_MONOTONIC_RAW (id=4) can sustain 67900677 (67901K, 68M) calls per second without zero deltas.
+[2022.08.05-02.38.34:269][  0]LogCore:  - CLOCK_MONOTONIC_COARSE (id=6) can sustain 163128296 (163128K, 163M) calls per second with 99.999841% zero deltas.
+[2022.08.05-02.38.34:269][  0]LogCore: Selected clock_id 4 (CLOCK_MONOTONIC_RAW) since it is the fastest support clock without zero deltas.
+[2022.08.05-02.38.34:269][  0]LogInit: Unix-specific commandline switches:
+[2022.08.05-02.38.34:269][  0]LogInit:  -ansimalloc - use malloc()/free() from libc (useful for tools like valgrind and electric fence)
+[2022.08.05-02.38.34:269][  0]LogInit:  -jemalloc - use jemalloc for all memory allocation
+[2022.08.05-02.38.34:269][  0]LogInit:  -binnedmalloc - use binned malloc  for all memory allocation
+[2022.08.05-02.38.34:269][  0]LogInit:  -filemapcachesize=NUMBER - set the size for case-sensitive file mapping cache
+[2022.08.05-02.38.34:269][  0]LogInit:  -useksm - uses kernel same-page mapping (KSM) for mapped memory (OFF)
+[2022.08.05-02.38.34:269][  0]LogInit:  -ksmmergeall - marks all mmap'd memory pages suitable for KSM (OFF)
+[2022.08.05-02.38.34:269][  0]LogInit:  -preloadmodulesymbols - Loads the main module symbols file into memory (OFF)
+[2022.08.05-02.38.34:269][  0]LogInit:  -sigdfl=SIGNAL - Allows a specific signal to be set to its default handler rather then ignoring the signal
+[2022.08.05-02.38.34:269][  0]LogInit:  -httpproxy=ADDRESS:PORT - redirects HTTP requests to a proxy (only supported if compiled with libcurl)
+[2022.08.05-02.38.34:269][  0]LogInit:  -reuseconn - allow libcurl to reuse HTTP connections (only matters if compiled with libcurl)
+[2022.08.05-02.38.34:269][  0]LogInit:  -virtmemkb=NUMBER - sets process virtual memory (address space) limit (overrides VirtualMemoryLimitInKB value from .ini)
+[2022.08.05-02.38.34:269][  0]LogInit:  - Physical RAM available (not considering process quota): 32 GB (31807 MB, 32571384 KB, 33353097216 bytes)
+[2022.08.05-02.38.34:269][  0]LogInit:  - VirtualMemoryAllocator pools will grow at scale 1.4
+[2022.08.05-02.38.34:269][  0]LogInit:  - MemoryRangeDecommit() will be a no-op (re-run with -vmapoolevict to change)
+[2022.08.05-02.38.34:277][  0]LogInit: Physics initialised using underlying interface: PhysX
+[2022.08.05-02.38.34:277][  0]LogInit: Using OS detected language (zh-CN).
+[2022.08.05-02.38.34:277][  0]LogInit: Using OS detected locale (zh-CN).
+[2022.08.05-02.38.34:278][  0]LogTextLocalizationManager: No localization for 'zh-CN' exists, so 'en' will be used for the language.
+[2022.08.05-02.38.34:278][  0]LogTextLocalizationManager: No localization for 'zh-CN' exists, so 'en' will be used for the locale.
+[2022.08.05-02.38.34:300][  0]LogHAL: Warning: Splash screen image not found.
+[2022.08.05-02.38.34:303][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2022.08.05-02.38.34:303][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2022.08.05-02.38.34:304][  0]LogInit: Using SDL_WINDOW_VULKAN
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: - Found 4 instance layers
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_LAYER_LUNARG_standard_validation
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_LAYER_MESA_device_select
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_LAYER_MESA_overlay
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_LAYER_NV_optimus
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: - Found 18 instance extensions
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_EXT_acquire_xlib_display
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_EXT_debug_report
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_EXT_debug_utils
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_EXT_direct_mode_display
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_EXT_display_surface_counter
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_KHR_device_group_creation
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_KHR_display
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_KHR_external_fence_capabilities
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_KHR_external_memory_capabilities
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_KHR_external_semaphore_capabilities
+[2022.08.05-02.38.34:443][  0]LogVulkanRHI: Display: * VK_KHR_get_display_properties2
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_get_physical_device_properties2
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_get_surface_capabilities2
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_surface
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_surface_protected_capabilities
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_wayland_surface
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_xcb_surface
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_xlib_surface
+[2022.08.05-02.38.34:444][  0]LogHMD: Failed to enumerate extensions. Please check that you have a valid OpenXR runtime installed.
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: Not using instance layers
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: Using instance extensions
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_surface
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_xlib_surface
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_external_memory_capabilities
+[2022.08.05-02.38.34:444][  0]LogVulkanRHI: Display: * VK_KHR_get_physical_device_properties2
+[2022.08.05-02.38.34:483][  0]LogVulkanRHI: Display: Found 1 device(s)
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: Device 0: llvmpipe (LLVM 12.0.0, 256 bits)
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: - API 1.1.182(0x4010b6) Driver 0x1 VendorId 0x10005
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: - DeviceID 0x0 Type CPU
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: - Max Descriptor Sets Bound 8 Timestamps 1
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: - Device Properties driverName: llvmpipe
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: - Device Properties driverInfo: Mesa 21.2.6 (LLVM 12.0.0)
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device layer VK_LAYER_MESA_device_select
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_calibrated_timestamps
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_conditional_rendering
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_custom_border_color
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_extended_dynamic_state
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_extended_dynamic_state2
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_host_query_reset
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_index_type_uint8
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_line_rasterization
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_multi_draw
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_post_depth_coverage
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_private_data
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_provoking_vertex
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_sampler_filter_minmax
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_scalar_block_layout
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_separate_stencil_usage
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_shader_stencil_export
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_shader_viewport_index_layer
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_transform_feedback
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_vertex_attribute_divisor
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_EXT_vertex_input_dynamic_state
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_GOOGLE_decorate_string
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_GOOGLE_hlsl_functionality1
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_16bit_storage
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_8bit_storage
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_bind_memory2
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_buffer_device_address
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_copy_commands2
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_create_renderpass2
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_dedicated_allocation
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_descriptor_update_template
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_device_group
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_draw_indirect_count
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_driver_properties
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_external_fence
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_external_memory
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_external_semaphore
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_get_memory_requirements2
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_image_format_list
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_imageless_framebuffer
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_incremental_present
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_maintenance1
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_maintenance2
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_maintenance3
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_multiview
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_push_descriptor
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_relaxed_block_layout
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_sampler_mirror_clamp_to_edge
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_separate_depth_stencil_layouts
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_shader_atomic_int64
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_shader_draw_parameters
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_storage_buffer_storage_class
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_swapchain
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_uniform_buffer_standard_layout
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: -    Found device extension VK_KHR_variable_pointers
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: Using Device 0: Geometry 1 Tessellation 1 BufferAtomic64 1
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: Found 1 Queue Families
+[2022.08.05-02.38.34:484][  0]LogVulkanRHI: Display: Initializing Queue Family 0: 1 queues Gfx Compute Xfer
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: Using device layers
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: Using device extensions
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_KHR_driver_properties
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_KHR_get_memory_requirements2
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_KHR_dedicated_allocation
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_KHR_swapchain
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_KHR_maintenance1
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_KHR_maintenance2
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_EXT_scalar_block_layout
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_KHR_shader_atomic_int64
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: * VK_KHR_image_format_list
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: 1 Device Memory Heaps; Max memory allocations -1
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display:  0: Flags 0x1 Size 2147483648 (2048.00 MB) GPU
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: 1 Device Memory Types (Not unified)
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display:  0: Flags 0x0000f Heap  0  Local HostVisible HostCoherent HostCached     
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: Host Allocation Percentage   0.00% -          0.00MB /    0.000MB
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: Memory Budget unavailable
+[2022.08.05-02.38.34:493][  0]LogVulkanRHI: Display: FVulkanPipelineStateCacheManager: Binary pipeline cache '../../../contest2/Saved/VulkanPSO.cache.10005.0' not found.
+[2022.08.05-02.38.34:495][  0]LogHMD: Failed to enumerate extensions. Please check that you have a valid OpenXR runtime installed.
+[2022.08.05-02.38.34:495][  0]LogRHI: Texture pool is 1433 MB (70% of 2048 MB)
+[2022.08.05-02.38.34:495][  0]LogRendererCore: Ray tracing is disabled. Reason: r.RayTracing=0.
+[2022.08.05-02.38.34:501][  0]LogShaderLibrary: Display: Using ../../../contest2/Content/ShaderArchive-Global-SF_VULKAN_SM5.ushaderbytecode for material shader code. Total 1868 unique shaders.
+[2022.08.05-02.38.34:501][  0]LogShaderLibrary: Display: Cooked Context: Using Shared Shader Library Global
+[2022.08.05-02.38.34:501][  0]LogShaderLibrary: Display: Logical shader library 'Global' has been created, components 1
+[2022.08.05-02.38.34:501][  0]LogTemp: Warning: Clearing the OS Cache
+[2022.08.05-02.38.34:501][  0]LogODSC: ODSC Thread active.
+[2022.08.05-02.38.34:504][  0]LogPakFile: New pak file ../../../contest2/Content/Paks/contest2-LinuxNoEditor.pak added to pak precacher.
+[2022.08.05-02.38.34:531][  0]LogSlate: Using FreeType 2.10.0
+[2022.08.05-02.38.34:531][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2022.08.05-02.38.34:531][  0]LogHMD: Failed to enumerate extensions. Please check that you have a valid OpenXR runtime installed.
+[2022.08.05-02.38.34:562][  0]LogShaderLibrary: Display: Using ../../../contest2/Content/ShaderArchive-contest2-SF_VULKAN_SM5.ushaderbytecode for material shader code. Total 3024 unique shaders.
+[2022.08.05-02.38.34:562][  0]LogShaderLibrary: Display: Cooked Context: Using Shared Shader Library contest2
+[2022.08.05-02.38.34:562][  0]LogShaderLibrary: Display: Logical shader library 'contest2' has been created, components 1
+[2022.08.05-02.38.34:562][  0]LogRHI: Display: Opened pipeline cache after state change and enqueued 0 of 0 tasks for precompile.
+[2022.08.05-02.38.34:563][  0]LogShaderLibrary: Display: Using ../../../contest2/Content/ShaderArchive-contest2-SF_VULKAN_SM5.ushaderbytecode for material shader code. Total 3024 unique shaders.
+[2022.08.05-02.38.34:563][  0]LogShaderLibrary: Display: Cooked Context: Using Shared Shader Library contest2
+[2022.08.05-02.38.34:563][  0]LogRHI: Display: Opened pipeline cache after state change and enqueued 0 of 0 tasks for precompile.
+[2022.08.05-02.38.34:563][  0]LogRHI: Display: Failed to open default shader pipeline cache for contest2 using shader platform 20.
+[2022.08.05-02.38.34:563][  0]LogInit: Using OS detected language (zh-CN).
+[2022.08.05-02.38.34:563][  0]LogInit: Using OS detected locale (zh-CN).
+[2022.08.05-02.38.34:563][  0]LogTextLocalizationManager: No localization for 'zh-CN' exists, so 'en' will be used for the language.
+[2022.08.05-02.38.34:563][  0]LogTextLocalizationManager: No localization for 'zh-CN' exists, so 'en' will be used for the locale.
+[2022.08.05-02.38.34:564][  0]LogAssetRegistry: FAssetRegistry took 0.0004 seconds to start up
+[2022.08.05-02.38.34:614][  0]LogTextLocalizationManager: Compacting localization data took   3.23ms
+[2022.08.05-02.38.34:614][  0]LogStreaming: Display: FlushAsyncLoading: 1 QueuedPackages, 0 AsyncPackages
+[2022.08.05-02.38.34:614][  0]LogPackageLocalizationCache: Processed 23 localized package path(s) for 1 prioritized culture(s) in 0.000039 seconds
+[2022.08.05-02.38.34:620][  0]LogSerialization: Display: AllowBulkDataInIoStore: 'true'
+[2022.08.05-02.38.34:620][  0]LogLinux: Selected Device Profile: [LinuxNoEditor]
+[2022.08.05-02.38.34:620][  0]LogInit: Active device profile: [0x7fd811718380][0x7fd81a534930 49] LinuxNoEditor
+[2022.08.05-02.38.34:620][  0]LogInit: Profiles: [0x7fd811717f00][0x7fd93cf6db70 49] Linux, [0x7fd811718380][0x7fd81a534930 49] LinuxNoEditor, 
+[2022.08.05-02.38.34:631][  0]LogNetVersion: contest2 1.0.0, NetCL: 17155196, EngineNetVer: 17, GameNetVer: 0 (Checksum: 3227083222)
+[2022.08.05-02.38.34:703][  0]LogCore: 0x00000000068ad64a Dladdr: 0.379324ms Open: 0.020462ms Search: 0.010733ms
+[2022.08.05-02.38.34:703][  0]LogCore: 0x00000000068b4e74 Dladdr: 0.350991ms Open: 0.007471ms Search: 0.000433ms
+[2022.08.05-02.38.34:704][  0]LogCore: 0x00000000068b4caa Dladdr: 0.325227ms Open: 0.005870ms Search: 0.000282ms
+[2022.08.05-02.38.34:704][  0]LogCore: 0x0000000007e18efa Dladdr: 0.331137ms Open: 0.006109ms Search: 0.000258ms
+[2022.08.05-02.38.34:704][  0]LogCore: 0x0000000007e1343d Dladdr: 0.332255ms Open: 0.005461ms Search: 0.000195ms
+[2022.08.05-02.38.34:705][  0]LogCore: 0x0000000006ab03b2 Dladdr: 0.316034ms Open: 0.005408ms Search: 0.000177ms
+[2022.08.05-02.38.34:705][  0]LogCore: 0x00000000080abf02 Dladdr: 0.314746ms Open: 0.005421ms Search: 0.000172ms
+[2022.08.05-02.38.34:705][  0]LogCore: 0x00000000080ae47a Dladdr: 0.346803ms Open: 0.005786ms Search: 0.000206ms
+[2022.08.05-02.38.34:706][  0]LogCore: 0x0000000004817668 Dladdr: 0.326473ms Open: 0.005606ms Search: 0.000202ms
+[2022.08.05-02.38.34:706][  0]LogCore: 0x00000000046b074c Dladdr: 0.328429ms Open: 0.005768ms Search: 0.000192ms
+[2022.08.05-02.38.34:706][  0]LogCore: 0x00000000046a0b56 Dladdr: 0.317729ms Open: 0.005433ms Search: 0.000174ms
+[2022.08.05-02.38.34:707][  0]LogCore: 0x000000000469ef7c Dladdr: 0.316878ms Open: 0.005674ms Search: 0.000194ms
+[2022.08.05-02.38.34:707][  0]LogCore: 0x00000000046a6ef5 Dladdr: 0.318329ms Open: 0.005869ms Search: 0.000174ms
+[2022.08.05-02.38.34:708][  0]LogCore: 0x00000000046a6484 Dladdr: 0.319196ms Open: 0.005809ms Search: 0.000177ms
+[2022.08.05-02.38.34:708][  0]LogCore: 0x00000000046b5650 Dladdr: 0.317336ms Open: 0.005297ms Search: 0.000191ms
+[2022.08.05-02.38.34:708][  0]LogCore: 0x0000000004702cd9 Dladdr: 0.317863ms Open: 0.005620ms Search: 0.000196ms
+[2022.08.05-02.38.34:709][  0]LogCore: 0x00000000048d4439 Dladdr: 0.317837ms Open: 0.005339ms Search: 0.000200ms
+[2022.08.05-02.38.34:709][  0]LogCore: 0x00000000048d239c Dladdr: 0.334983ms Open: 0.005405ms Search: 0.000229ms
+[2022.08.05-02.38.34:709][  0]LogCore: 0x00000000048d02f0 Dladdr: 0.331304ms Open: 0.005588ms Search: 0.000176ms
+[2022.08.05-02.38.34:710][  0]LogCore: 0x00000000048d2795 Dladdr: 0.325038ms Open: 0.005465ms Search: 0.000221ms
+[2022.08.05-02.38.34:710][  0]LogCore: 0x00000000048b914a Dladdr: 0.327855ms Open: 0.005477ms Search: 0.000206ms
+[2022.08.05-02.38.34:710][  0]LogCore: 0x00000000048d317b Dladdr: 0.319501ms Open: 0.005400ms Search: 0.000214ms
+[2022.08.05-02.38.34:711][  0]LogCore: 0x00000000033cdeb7 Dladdr: 0.319063ms Open: 0.005360ms Search: 0.000206ms
+[2022.08.05-02.38.34:711][  0]LogCore: 0x0000000003324f14 Dladdr: 0.319262ms Open: 0.005388ms Search: 0.000215ms
+[2022.08.05-02.38.34:711][  0]LogCore: 0x000000000332455b Dladdr: 0.317257ms Open: 0.005581ms Search: 0.000216ms
+[2022.08.05-02.38.34:712][  0]LogCore: 0x0000000004722561 Dladdr: 0.317512ms Open: 0.005760ms Search: 0.000219ms
+[2022.08.05-02.38.34:712][  0]LogCore: 0x00000000048c2b9c Dladdr: 0.429482ms Open: 0.006338ms Search: 0.000263ms
+[2022.08.05-02.38.34:713][  0]LogCore: 0x00000000032e05f2 Dladdr: 0.320157ms Open: 0.005771ms Search: 0.000191ms
+[2022.08.05-02.38.34:713][  0]LogCore: 0x00000000032d6149 Dladdr: 0.320187ms Open: 0.005439ms Search: 0.000234ms
+[2022.08.05-02.38.34:713][  0]LogCore: 0x0000000008ae9f68 Dladdr: 0.344330ms Open: 0.005696ms Search: 0.000218ms
+[2022.08.05-02.38.34:713][  0]LogCore: 0x00007fd944be3082 Dladdr: 0.013862ms Open: 0.004722ms Search: 0.000180ms
+[2022.08.05-02.38.34:714][  0]LogCore: 0x00000000032c6f28 Dladdr: 0.336175ms Open: 0.005925ms Search: 0.000191ms
+[2022.08.05-02.38.34:714][  0]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.012 s
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: === Handled ensure: ===
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: 
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: Ensure condition failed: (ImageCreateInfo.usage & VK_IMAGE_USAGE_SAMPLED_BIT) == 0 [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/VulkanRHI/Private/VulkanTexture.cpp] [Line: 427]
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: 
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: Stack: 
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000068ad64b contest2!UnknownFunction(0x66ad64a)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000068b4e75 contest2!UnknownFunction(0x66b4e74)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000068b4cab contest2!UnknownFunction(0x66b4caa)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x0000000007e18efb contest2!UnknownFunction(0x7c18efa)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x0000000007e1343e contest2!UnknownFunction(0x7c1343d)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x0000000006ab03b3 contest2!UnknownFunction(0x68b03b2)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000080abf03 contest2!UnknownFunction(0x7eabf02)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000080ae47b contest2!UnknownFunction(0x7eae47a)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x0000000004817669 contest2!UnknownFunction(0x4617668)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000046b074d contest2!UnknownFunction(0x44b074c)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000046a0b57 contest2!UnknownFunction(0x44a0b56)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x000000000469ef7d contest2!UnknownFunction(0x449ef7c)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000046a6ef6 contest2!UnknownFunction(0x44a6ef5)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000046a6485 contest2!UnknownFunction(0x44a6484)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000046b5651 contest2!UnknownFunction(0x44b5650)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x0000000004702cda contest2!UnknownFunction(0x4502cd9)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000048d443a contest2!UnknownFunction(0x46d4439)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000048d239d contest2!UnknownFunction(0x46d239c)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000048d02f1 contest2!UnknownFunction(0x46d02f0)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000048d2796 contest2!UnknownFunction(0x46d2795)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000048b914b contest2!UnknownFunction(0x46b914a)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000048d317c contest2!UnknownFunction(0x46d317b)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000033cdeb8 contest2!UnknownFunction(0x31cdeb7)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x0000000003324f15 contest2!UnknownFunction(0x3124f14)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x000000000332455c contest2!UnknownFunction(0x312455b)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x0000000004722562 contest2!UnknownFunction(0x4522561)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000048c2b9d contest2!UnknownFunction(0x46c2b9c)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000032e05f3 contest2!UnknownFunction(0x30e05f2)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000032d614a contest2!UnknownFunction(0x30d6149)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x0000000008ae9f69 contest2!UnknownFunction(0x88e9f68)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00007fd944be3083 libc.so.6!__libc_start_main(+0xf2)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: [Callstack] 0x00000000032c6f29 contest2!UnknownFunction(0x30c6f28)
+[2022.08.05-02.38.34:714][  0]LogOutputDevice: Error: 
+[2022.08.05-02.38.34:716][  0]LogStats:                SubmitErrorReport -  0.000 s
+[2022.08.05-02.38.34:747][  0]LogStats:                    SendNewReport -  0.031 s
+[2022.08.05-02.38.34:747][  0]LogStats:             FDebug::EnsureFailed -  0.045 s
+[2022.08.05-02.38.34:769][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2022.08.05-02.38.34:769][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2022.08.05-02.38.34:785][  0]LogMoviePlayer: Initializing movie player
+[2022.08.05-02.38.34:809][  0]LogVulkanRHI: Display: Requested PixelFormat 18 not supported by this swapchain! Falling back to supported swapchain format...
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Display: Queue Family 0: Supports Present
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Display: Queue Family 0: Supports Present
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Display: Found 4 Surface present modes:
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Display: - VK_PRESENT_MODE_IMMEDIATE_KHR (0)
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Display: - VK_PRESENT_MODE_MAILBOX_KHR (1)
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Display: - VK_PRESENT_MODE_FIFO_KHR (2)
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Display: - VK_PRESENT_MODE_FIFO_RELAXED_KHR (3)
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Display: Selected VkPresentModeKHR mode 1
+[2022.08.05-02.38.34:810][  0]LogVulkanRHI: Creating new VK swapchain with present mode 1, format 44, color space 0, num images 3
+[2022.08.05-02.38.34:850][  0]LogTemp: StartupModule: AirSim plugin
+[2022.08.05-02.38.34:851][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: DA8DC67CE9D94C6A8813D35F64DF8E7B | Instance: 441CD27EE6AC44AC81DD68FA750C5D7A (jakeluo-desktop-3640340).
+[2022.08.05-02.38.34:852][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2022.08.05-02.38.34:857][  0]LogUObjectArray: 15520 objects as part of root set at end of initial load.
+[2022.08.05-02.38.34:857][  0]LogUObjectArray: 2 objects are not in the root set, but can never be destroyed because they are in the DisregardForGC set.
+[2022.08.05-02.38.34:857][  0]LogUObjectAllocator: 3209560 out of 0 bytes used by permanent object pool.
+[2022.08.05-02.38.34:857][  0]LogUObjectArray: CloseDisregardForGC: 15520/15520 objects in disregard for GC pool
+[2022.08.05-02.38.34:859][  0]LogEngine: Initializing Engine...
+[2022.08.05-02.38.34:859][  0]LogHMD: Failed to enumerate extensions. Please check that you have a valid OpenXR runtime installed.
+[2022.08.05-02.38.34:860][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2022.08.05-02.38.34:923][  0]LogInit: Initializing FReadOnlyCVARCache
+[2022.08.05-02.38.34:923][  0]LogAudio: Display: Initializing Audio Device Manager...
+[2022.08.05-02.38.34:923][  0]LogAudio: Display: Loading Default Audio Settings Objects...
+[2022.08.05-02.38.34:924][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
+[2022.08.05-02.38.34:924][  0]LogAudio: Display: Audio Device Manager Initialized
+[2022.08.05-02.38.34:924][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
+[2022.08.05-02.38.34:924][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2022.08.05-02.38.34:924][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2022.08.05-02.38.34:924][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2022.08.05-02.38.34:924][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2022.08.05-02.38.34:924][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2022.08.05-02.38.34:924][  0]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2022.08.05-02.38.34:924][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2022.08.05-02.38.34:924][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2022.08.05-02.38.34:924][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2022.08.05-02.38.34:924][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2022.08.05-02.38.34:924][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2022.08.05-02.38.34:924][  0]LogAudioMixer: Display: Initializing audio mixer.
+[2022.08.05-02.38.34:928][  0]LogAudioMixerSDL: Display: Initialized SDL using pulseaudio platform API backend.
+[2022.08.05-02.38.35:226][  0]LogAudioMixerSDL: Opening default audio device (device index -1)
+[2022.08.05-02.38.35:228][  0]LogAudioMixer: Display: Using Audio Device Default Audio Device
+[2022.08.05-02.38.35:229][  0]LogAudioMixer: Display: Initializing Sound Submixes...
+[2022.08.05-02.38.35:231][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2022.08.05-02.38.35:231][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2022.08.05-02.38.35:235][  0]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2022.08.05-02.38.35:235][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=6, Samples=6144
+[2022.08.05-02.38.35:235][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2022.08.05-02.38.35:235][  0]LogInit: FAudioDevice initialized.
+[2022.08.05-02.38.35:237][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2022.08.05-02.38.35:237][  0]LogInit: Texture streaming: Enabled
+[2022.08.05-02.38.35:242][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
+[2022.08.05-02.38.35:242][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.08.05-02.38.35:242][  0]LogInit: Display: Game Engine Initialized.
+[2022.08.05-02.38.35:242][  0]LogInit: Display: Starting Game.
+[2022.08.05-02.38.35:242][  0]LogNet: Browse: /Game/Forest/Maps/Demo?Name=Player
+[2022.08.05-02.38.35:242][  0]LogLoad: LoadMap: /Game/Forest/Maps/Demo?Name=Player
+[2022.08.05-02.38.35:242][  0]LogWorld: BeginTearingDown for /Temp/Untitled_0
+[2022.08.05-02.38.35:244][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2022.08.05-02.38.35:244][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.08.05-02.38.35:259][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.08.05-02.38.35:260][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.66ms
+[2022.08.05-02.38.35:479][  0]LogPakFile: Precache HighWater 16MB
+
+[2022.08.05-02.38.35:481][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Demo'.
+[2022.08.05-02.38.35:482][  0]LogAIModule: Creating AISystem for world Demo
+[2022.08.05-02.38.35:482][  0]LogLoad: Game class is 'AirSimGameMode'
+[2022.08.05-02.38.35:488][  0]LogPhysics: Warning: Scale for /Game/Forest/Maps/Demo.Demo:PersistentLevel.GameStart_2.Cube has a component set to zero, which will result in a bad body instance. Scale:X=1.688 Y=1.812 Z=0.000
+[2022.08.05-02.38.35:488][  0]LogWorld: Bringing World /Game/Forest/Maps/Demo.Demo up for play (max tick rate 0) at 2022.08.05-10.38.35
+[2022.08.05-02.38.35:488][  0]LogWorld: Bringing up level for play took: 0.005755
+[2022.08.05-02.38.35:491][  0]LogBlueprintUserMessages: [GameStart_2] 0
+[2022.08.05-02.38.35:491][  0]LogBlueprintUserMessages: [GameStart_2] 0
+[2022.08.05-02.38.35:491][  0]LogBlueprintUserMessages: [GameStart_2] 0
+[2022.08.05-02.38.35:491][  0]LogBlueprintUserMessages: [GameStart_2] 0
+[2022.08.05-02.38.35:491][  0]LogBlueprintUserMessages: [GameStart_2] 0
+[2022.08.05-02.38.35:491][  0]LogBlueprintUserMessages: [GameStart_2] 0
+[2022.08.05-02.38.35:512][  0]LogPackageName: SearchForPackageOnDisk took   0.021s, but failed to resolve Blocks.
+[2022.08.05-02.38.35:512][  0]r.CustomDepth = "3"
+[2022.08.05-02.38.35:512][  0]LogLevel: WORLD TRANSLATION BEGIN {0, 0, 0} -> {0, 0, 15}
+[2022.08.05-02.38.35:513][  0]LogLevel: WORLD TRANSLATION END {0, 0, 15} took 0.2682 ms
+[2022.08.05-02.38.35:513][  0]LogActor: Warning: BP_CameraDirector_C /Game/Forest/Maps/Demo.Demo:PersistentLevel.CameraDirector has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2022.08.05-02.38.35:542][  0]LogTemp: drone_1
+[2022.08.05-02.38.35:544][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@1] File [../../../contest2/Saved/Config/LinuxNoEditor/Scalability.ini]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.ShadowQuality:3]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:1]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:1024]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:1024]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.05]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:0.7]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:0.25]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:0.5]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:0]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:0]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.VolumetricFog:0]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:.5]]
+[2022.08.05-02.38.35:544][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2022.08.05-02.38.35:544][  0]sg.ShadowQuality = "1"
+[2022.08.05-02.38.35:558][  0]LogLoad: Took 0.315709 seconds to LoadMap(/Game/Forest/Maps/Demo)
+[2022.08.05-02.38.35:559][  0]LogSlate: Took 0.000592 seconds to synchronously load lazily loaded font '../../../Engine/Content/EngineFonts/Faces/RobotoBold.ufont' (160K)
+[2022.08.05-02.38.35:570][  0]LogSlate: Took 0.000306 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2022.08.05-02.38.35:573][  0]LogRHI: Display: ShaderPipelineCache: Paused Batching. 1
+[2022.08.05-02.38.35:573][  0]LogPakFile: AllPaks IndexSizes: DirectoryHashSize=328412, PathHashSize=16, EntriesSize=61440, TotalSize=389868
+[2022.08.05-02.38.35:573][  0]LogRHI: Display: ShaderPipelineCache: Resumed Batching. 0
+[2022.08.05-02.38.35:574][  0]LogRHI: Display: ShaderPipelineCache: Batching Resumed.
+[2022.08.05-02.38.35:574][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2022.08.05-02.38.35:574][  0]LogRenderer: Reallocating scene render targets to support 640x480 Format 10 NumSamples 1 (Frame:1).
+[2022.08.05-02.38.35:574][  0]LogLoad: (Engine Initialization) Total time: 1.49 seconds
+[2022.08.05-02.38.35:690][  0]LogInit: Adding external input plugin.
+[2022.08.05-02.38.35:690][  0]LogInit: Adding external input plugin.
+[2022.08.05-02.38.35:692][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2022.08.05-02.38.45:705][  0]LogCore: Error: appError called: Assertion failed: bSuccess [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/VulkanRHI/Private/VulkanCommandBuffer.cpp] [Line: 474] 
+
+
+[2022.08.05-02.38.45:716][  0]LogCore: === Critical error: ===
+Unhandled Exception: SIGSEGV: invalid attempt to write memory at address 0x0000000000000003
+
+[2022.08.05-02.38.45:716][  0]LogCore: Assertion failed: bSuccess [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/VulkanRHI/Private/VulkanCommandBuffer.cpp] [Line: 474] 
+
+
+
+0x00000000041c283d contest2!UnknownFunction(0x3fc283d)
+0x000000000438f2db contest2!UnknownFunction(0x418f2da)
+0x0000000004334fc4 contest2!UnknownFunction(0x4134fc3)
+0x0000000004334e6b contest2!UnknownFunction(0x4134e6a)
+0x000000000681ef47 contest2!UnknownFunction(0x661ef46)
+0x000000000687a8a8 contest2!UnknownFunction(0x667a8a7)
+0x0000000006a42b9f contest2!UnknownFunction(0x6842b9e)
+0x00000000032f168d contest2!UnknownFunction(0x30f168c)
+0x00000000032f1982 contest2!UnknownFunction(0x30f1981)
+0x0000000004185dab contest2!UnknownFunction(0x3f85daa)
+0x00000000041848fe contest2!UnknownFunction(0x3f848fd)
+0x0000000006a733df contest2!UnknownFunction(0x68733de)
+0x0000000006a814d2 contest2!UnknownFunction(0x68814d1)
+0x000000000424af37 contest2!UnknownFunction(0x404af36)
+0x00000000041e054c contest2!UnknownFunction(0x3fe054b)
+0x00007fd945683609 libpthread.so.0!UnknownFunction(0x8608)
+0x00007fd944cde133 libc.so.6!clone(+0x42)
+
+[2022.08.05-02.38.45:728][  0]LogExit: Executing StaticShutdownAfterError
