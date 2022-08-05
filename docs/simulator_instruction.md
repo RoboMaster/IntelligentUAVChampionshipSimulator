@@ -18,9 +18,9 @@
 3. ## 下载资源文件到特定位置
     >`cd IntelligentUAVChampionshipSimulator`  
     ---
-    >`wget -O ./stage2_stereo/complex/Content/Paks/complex-LinuxNoEditor.pak  https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/stage2/complex-LinuxNoEditor.pak`
+    >`wget -P ./stage2_stereo/complex/Content/Paks/  https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/stage2/complex-LinuxNoEditor.pak`
     ---
-    >`wget -O ./stage2_stereo/complex/Binaries/Linux/complex https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/stage2/complex`
+    >`wget -P ./stage2_stereo/complex/Binaries/Linux/ https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/stage2/complex`
 
 4. ## 安装 ROS noetic
     >设置软件库   
