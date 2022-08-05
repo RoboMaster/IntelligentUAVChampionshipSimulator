@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FGenericCrashContext>
+<RuntimeProperties>
+<CrashVersion>3</CrashVersion>
+<ExecutionGuid>FE9D96BA03FF45C8804C955387D9F94E</ExecutionGuid>
+<CrashGUID>UE4CC-Linux-C84091B9F9C646E9AA347691F36C7415_0003</CrashGUID>
+<IsEnsure>false</IsEnsure>
+<IsAssert>true</IsAssert>
+<CrashType>Assert</CrashType>
+<ErrorMessage>Assertion failed: bSuccess [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/VulkanRHI/Private/VulkanCommandBuffer.cpp] [Line: 474] 
+
+</ErrorMessage>
+<CrashReporterMessage></CrashReporterMessage>
+<ProcessId>3640553</ProcessId>
+<SecondsSinceStart>0</SecondsSinceStart>
+<IsInternalBuild>false</IsInternalBuild>
+<IsPerforceBuild>false</IsPerforceBuild>
+<IsSourceDistribution>false</IsSourceDistribution>
+<GameName>UE4-contest2</GameName>
+<ExecutableName>contest2</ExecutableName>
+<BuildConfiguration>Development</BuildConfiguration>
+<GameSessionID></GameSessionID>
+<Symbols>**UE4*Release-4.27-CL-18319896-Linux-Development</Symbols>
+<PlatformName>LinuxNoEditor</PlatformName>
+<PlatformNameIni>Linux</PlatformNameIni>
+<EngineMode>Game</EngineMode>
+<EngineModeEx>Unset</EngineModeEx>
+<DeploymentName></DeploymentName>
+<EngineVersion>4.27.2-18319896+++UE4+Release-4.27</EngineVersion>
+<CommandLine> contest2 -WINDOWED -ResX=640 -ResY=480</CommandLine>
+<LanguageLCID>0</LanguageLCID>
+<AppDefaultLocale>zh_CN</AppDefaultLocale>
+<BuildVersion>++UE4+Release-4.27-CL-18319896</BuildVersion>
+<IsUE4Release>false</IsUE4Release>
+<IsRequestingExit>false</IsRequestingExit>
+<UserName></UserName>
+<BaseDir>/home/jakeluo/Documents/RM_inside_repos/simulator_roswrapper/stage1_RGBD/contest2/Binaries/Linux/</BaseDir>
+<RootDir>/home/jakeluo/Documents/RM_inside_repos/simulator_roswrapper/stage1_RGBD/</RootDir>
+<MachineId>B08D139C5E16452CBCE72662C510B912-000003E8</MachineId>
+<LoginId>b08d139c5e16452cbce72662c510b912-000003e8</LoginId>
+<EpicAccountId></EpicAccountId>
+<SourceContext></SourceContext>
+<UserDescription></UserDescription>
+<UserActivityHint></UserActivityHint>
+<CrashDumpMode>0</CrashDumpMode>
+<GameStateName></GameStateName>
+<Misc.NumberOfCores>10</Misc.NumberOfCores>
+<Misc.NumberOfCoresIncludingHyperthreads>20</Misc.NumberOfCoresIncludingHyperthreads>
+<Misc.Is64bitOperatingSystem>1</Misc.Is64bitOperatingSystem>
+<Misc.CPUVendor>GenuineIntel</Misc.CPUVendor>
+<Misc.CPUBrand>Intel(R) Core(TM) i9-7900X CPU @ 3.30GHz</Misc.CPUBrand>
+<Misc.PrimaryGPUBrand>GenericGPUBrand</Misc.PrimaryGPUBrand>
+<Misc.OSVersionMajor>GenericOSVersionLabel</Misc.OSVersionMajor>
+<Misc.OSVersionMinor>GenericOSSubVersionLabel</Misc.OSVersionMinor>
+<MemoryStats.TotalPhysical>33353097216</MemoryStats.TotalPhysical>
+<MemoryStats.TotalVirtual>2147479552</MemoryStats.TotalVirtual>
+<MemoryStats.PageSize>4096</MemoryStats.PageSize>
+<MemoryStats.TotalPhysicalGB>32</MemoryStats.TotalPhysicalGB>
+<MemoryStats.AvailablePhysical>30056640512</MemoryStats.AvailablePhysical>
+<MemoryStats.AvailableVirtual>2144595968</MemoryStats.AvailableVirtual>
+<MemoryStats.UsedPhysical>1178931200</MemoryStats.UsedPhysical>
+<MemoryStats.PeakUsedPhysical>1178931200</MemoryStats.PeakUsedPhysical>
+<MemoryStats.UsedVirtual>8546930688</MemoryStats.UsedVirtual>
+<MemoryStats.PeakUsedVirtual>8553422848</MemoryStats.PeakUsedVirtual>
+<MemoryStats.bIsOOM>0</MemoryStats.bIsOOM>
+<MemoryStats.OOMAllocationSize>0</MemoryStats.OOMAllocationSize>
+<MemoryStats.OOMAllocationAlignment>0</MemoryStats.OOMAllocationAlignment>
+<NumMinidumpFramesToIgnore>0</NumMinidumpFramesToIgnore>
+<CallStack></CallStack>
+<PCallStack>
+      contest2 0x0000000000200000 + 3fc283d         
+      contest2 0x0000000000200000 + 418f2db         
+      contest2 0x0000000000200000 + 4134fc4         
+      contest2 0x0000000000200000 + 4134e6b         
+      contest2 0x0000000000200000 + 661ef47         
+      contest2 0x0000000000200000 + 667a8a8         
+      contest2 0x0000000000200000 + 6842b9f         
+      contest2 0x0000000000200000 + 30f168d         
+      contest2 0x0000000000200000 + 30f1982         
+      contest2 0x0000000000200000 + 3f85dab         
+      contest2 0x0000000000200000 + 3f848fe         
+      contest2 0x0000000000200000 + 68733df         
+      contest2 0x0000000000200000 + 68814d2         
+      contest2 0x0000000000200000 + 404af37         
+      contest2 0x0000000000200000 + 3fe054c         
+ libpthread.so 0x00007f3499d60000 + 8609            
+       libc.so 0x00007f34992a4000 + 11f133          
+</PCallStack>
+<PCallStackHash>893854D4AF6B8E2A3D8ABCF77C3FEC65AE8AB1E5</PCallStackHash>
+</RuntimeProperties>
+<PlatformProperties>
+<CrashSignal>11</CrashSignal>
+<CrashSignalName>Segmentation fault</CrashSignalName>
+<PlatformCallbackResult>0</PlatformCallbackResult>
+</PlatformProperties>
+<EngineData>
+<RHI.RHIName>Vulkan</RHI.RHIName>
+<RHI.AdapterName>llvmpipe (LLVM 12.0.0, 256 bits)</RHI.AdapterName>
+<RHI.UserDriverVersion>0.0.1 (0x1)</RHI.UserDriverVersion>
+<RHI.InternalDriverVersion>1.1.182 (0x4010B6)</RHI.InternalDriverVersion>
+<RHI.FeatureLevel>SM5</RHI.FeatureLevel>
+<DeviceProfile.Name>LinuxNoEditor</DeviceProfile.Name>
+</EngineData>
+<GameData>
+</GameData>
+</FGenericCrashContext>
