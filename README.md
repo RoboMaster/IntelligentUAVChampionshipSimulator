@@ -19,3 +19,6 @@
 ----
 >赛项三:   
 `git clone https://github.com/RoboMaster/IntelligentUAVChampionshipSimulator.git -b stage3`
+----
+
+# 具体使用请参考克隆下来的文件夹中 docs/simulator_instruction.md 
