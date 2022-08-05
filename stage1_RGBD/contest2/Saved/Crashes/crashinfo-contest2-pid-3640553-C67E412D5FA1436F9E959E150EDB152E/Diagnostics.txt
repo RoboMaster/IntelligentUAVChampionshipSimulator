@@ -1,0 +1,36 @@
+Generating report for minidump
+
+Application version 4.27.2.0
+ ... built from changelist 18319896
+
+OS version Linux 5.15.0-43-generic (network name: jakeluo-desktop)
+Running 10 x86_64 processors (20 logical cores)
+Exception was "SIGSEGV: invalid attempt to write memory at address 0x0000000000000003"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+contest2!UnknownFunction(0x3fc283d)
+contest2!UnknownFunction(0x418f2da)
+contest2!UnknownFunction(0x4134fc3)
+contest2!UnknownFunction(0x4134e6a)
+contest2!UnknownFunction(0x661ef46)
+contest2!UnknownFunction(0x667a8a7)
+contest2!UnknownFunction(0x6842b9e)
+contest2!UnknownFunction(0x30f168c)
+contest2!UnknownFunction(0x30f1981)
+contest2!UnknownFunction(0x3f85daa)
+contest2!UnknownFunction(0x3f848fd)
+contest2!UnknownFunction(0x68733de)
+contest2!UnknownFunction(0x68814d1)
+contest2!UnknownFunction(0x404af36)
+contest2!UnknownFunction(0x3fe054b)
+libpthread.so.0!UnknownFunction(0x8608)
+libc.so.6!clone(+0x42)
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!
