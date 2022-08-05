@@ -18,9 +18,9 @@
 3. ## 下载资源文件到特定位置
    >`cd IntelligentUAVChampionshipSimulator`  
    ---
-   >`wget -O ./stage3/FPV1/Content/Paks/FPV1-LinuxNoEditor.pak  https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/stage3/FPV1-LinuxNoEditor.pak`
+   >`wget -P ./stage3/FPV1/Content/Paks/  https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/stage3/FPV1-LinuxNoEditor.pak`
    ---
-   >`wget -O ./stage3/FPV1/Binaries/Linux/FPV1 https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/stage3/FPV1`
+   >`wget -P ./stage3/FPV1/Binaries/Linux/ https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/stage3/FPV1`
 
 
 4. ## 安装 ROS noetic
