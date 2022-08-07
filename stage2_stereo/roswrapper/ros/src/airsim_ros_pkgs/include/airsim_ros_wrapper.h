@@ -153,8 +153,8 @@ public:
 
     // std::vector<ros::CallbackQueue> callback_queues_;
     ros::AsyncSpinner img_async_spinner_;
-    ros::AsyncSpinner img_front_async_spinner_;
-    ros::AsyncSpinner img_front_depth_async_spinner_;
+    ros::AsyncSpinner img_front_left_async_spinner_;
+    ros::AsyncSpinner img_front_right_async_spinner_;
     ros::AsyncSpinner img_bottom_async_spinner_;
     ros::AsyncSpinner lidar_async_spinner_;
     bool is_used_lidar_timer_cb_queue_;
@@ -238,8 +238,8 @@ private:
     /// ROS timer callbacks
     void img_response_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
     void img_response_bottom_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
-    void img_response_front_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
-    void img_response_front_depth_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
+    void img_response_front_left_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
+    void img_response_front_right_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
     void drone_state_timer_cb(const ros::TimerEvent& event); // update drone state from airsim_client_ every nth sec
     void lidar_timer_cb(const ros::TimerEvent& event);
 
@@ -367,8 +367,8 @@ private:
     // todo not sure if async spinners shuold be inside this class, or should be instantiated in airsim_node.cpp, and cb queues should be public
     // todo for multiple drones with multiple sensors, this won't scale. make it a part of VehicleROS?
     ros::CallbackQueue img_timer_cb_queue_;
-    ros::CallbackQueue img_timer_cb_queue_front_;
-    ros::CallbackQueue img_timer_cb_queue_front_depth_;
+    ros::CallbackQueue img_timer_cb_queue_front_left_;
+    ros::CallbackQueue img_timer_cb_queue_front_right_;
     ros::CallbackQueue img_timer_cb_queue_bottom_;
     ros::CallbackQueue lidar_timer_cb_queue_;
 
@@ -399,8 +399,8 @@ private:
     /// ROS Timers.
     ros::Timer airsim_img_response_timer_;
     ros::Timer airsim_img_response_bottom_timer_;
-    ros::Timer airsim_img_response_front_timer_;
-    ros::Timer airsim_img_response_front_depth_timer_;
+    ros::Timer airsim_img_response_front_left_timer_;
+    ros::Timer airsim_img_response_front_right_timer_;
     ros::Timer airsim_control_update_timer_;
     ros::Timer airsim_lidar_update_timer_;
 
@@ -409,24 +409,24 @@ private:
     std::vector<image_transport::Publisher> image_pub_vec_;
     std::vector<ros::Publisher> cam_info_pub_vec_;
 
-    image_transport::Publisher front_pub_;
-    image_transport::Publisher front_depth_pub_;
+    image_transport::Publisher front_left_pub_;
+    image_transport::Publisher front_right_pub_;
     image_transport::Publisher bottom_pub_;
 
     ros::Publisher bottom_cam_info_pub_;
-    ros::Publisher front_cam_info_pub_;
-    ros::Publisher front_depth_cam_info_pub_;
+    ros::Publisher front_left_cam_info_pub_;
+    ros::Publisher front_right_cam_info_pub_;
 
-    std::vector<ImageRequest> front_request_;
-    std::vector<ImageRequest> front_depth_request_;
+    std::vector<ImageRequest> front_left_request_;
+    std::vector<ImageRequest> front_right_request_;
     std::vector<ImageRequest> bottom_request_;
 
     
 
     std::vector<sensor_msgs::CameraInfo> camera_info_msg_vec_;
 
-    sensor_msgs::CameraInfo front_camera_info_;
-    sensor_msgs::CameraInfo front_depth_camera_info_;
+    sensor_msgs::CameraInfo front_left_camera_info_;
+    sensor_msgs::CameraInfo front_right_camera_info_;
     sensor_msgs::CameraInfo bottom_camera_info_;
 
     /// ROS other publishers

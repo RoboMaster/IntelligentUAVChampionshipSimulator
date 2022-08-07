@@ -28,8 +28,8 @@ const std::unordered_map<int, std::string> AirsimROSWrapper::image_type_int_to_s
 AirsimROSWrapper::AirsimROSWrapper(const ros::NodeHandle& nh, const ros::NodeHandle& nh_private, const std::string& host_ip)
     : img_async_spinner_(1, &img_timer_cb_queue_)
     , img_bottom_async_spinner_(1, &img_timer_cb_queue_bottom_)
-    , img_front_async_spinner_(1, &img_timer_cb_queue_front_) 
-    , img_front_depth_async_spinner_(1, &img_timer_cb_queue_front_depth_) // a thread for image callbacks to be 'spun' by img_async_spinner_
+    , img_front_left_async_spinner_(1, &img_timer_cb_queue_front_left_) 
+    , img_front_right_async_spinner_(1, &img_timer_cb_queue_front_right_) // a thread for image callbacks to be 'spun' by img_async_spinner_
     , lidar_async_spinner_(1, &lidar_timer_cb_queue_) // same as above, but for lidar
     , is_used_lidar_timer_cb_queue_(false)
     , is_used_img_timer_cb_queue_(false)
@@ -238,22 +238,19 @@ void AirsimROSWrapper::create_ros_pubs_from_settings_json()
                         bottom_cam_info_pub_ = nh_private_.advertise<sensor_msgs::CameraInfo>(cam_image_topic + "/camera_info", 10);
                         bottom_camera_info_ = generate_cam_info(curr_camera_name, camera_setting, capture_setting);
                     }
-                    if(strcmp(curr_camera_name.c_str(), "front_center")==0)
+                    if(strcmp(curr_camera_name.c_str(), "front_left")==0)
                     {
-                        if(curr_image_type == ImageType::Scene)
-                        {
-                            front_pub_ = image_transporter.advertise(cam_image_topic, 1);
-                            front_request_.push_back(ImageRequest(curr_camera_name, curr_image_type, false, false));
-                            front_cam_info_pub_ = nh_private_.advertise<sensor_msgs::CameraInfo>(cam_image_topic + "/camera_info", 10);
-                            front_camera_info_ = generate_cam_info(curr_camera_name, camera_setting, capture_setting);
-                        }else
-                        {
-                            front_depth_pub_ = image_transporter.advertise(cam_image_topic, 1);
-                            front_depth_request_.push_back(ImageRequest(curr_camera_name, curr_image_type, true, false));
-                            front_depth_cam_info_pub_ = nh_private_.advertise<sensor_msgs::CameraInfo>(cam_image_topic + "/camera_info", 10);
-                            front_depth_camera_info_ = generate_cam_info(curr_camera_name, camera_setting, capture_setting);
-                        }
-                        
+                        front_left_pub_ = image_transporter.advertise(cam_image_topic, 1);
+                        front_left_request_.push_back(ImageRequest(curr_camera_name, curr_image_type, false, false));
+                        front_left_cam_info_pub_ = nh_private_.advertise<sensor_msgs::CameraInfo>(cam_image_topic + "/camera_info", 10);
+                        front_left_camera_info_ = generate_cam_info(curr_camera_name, camera_setting, capture_setting);
+                    }
+                    if(strcmp(curr_camera_name.c_str(), "front_right")==0)
+                    {
+                        front_right_pub_ = image_transporter.advertise(cam_image_topic, 1);
+                        front_right_request_.push_back(ImageRequest(curr_camera_name, curr_image_type, false, false));
+                        front_right_cam_info_pub_ = nh_private_.advertise<sensor_msgs::CameraInfo>(cam_image_topic + "/camera_info", 10);
+                        front_right_camera_info_ = generate_cam_info(curr_camera_name, camera_setting, capture_setting);
                     }
                     // image_pub_vec_.push_back(image_transporter.advertise(cam_image_topic, 1));
                     // cam_info_pub_vec_.push_back(nh_private_.advertise<sensor_msgs::CameraInfo>(cam_image_topic + "/camera_info", 10));
@@ -363,23 +360,23 @@ void AirsimROSWrapper::create_ros_pubs_from_settings_json()
 
         // airsim_img_response_timer_ = nh_private_.createTimer(timer_options);
 
-        ros::TimerOptions timer_options_front(ros::Duration(update_airsim_img_response_every_n_sec),
-                                        boost::bind(&AirsimROSWrapper::img_response_front_timer_cb, this, _1),
-                                        &img_timer_cb_queue_front_);
+        ros::TimerOptions timer_options_front_left_(ros::Duration(update_airsim_img_response_every_n_sec),
+                                        boost::bind(&AirsimROSWrapper::img_response_front_left_timer_cb, this, _1),
+                                        &img_timer_cb_queue_front_left_);
 
-        airsim_img_response_front_timer_ = nh_private_.createTimer(timer_options_front);
+        airsim_img_response_front_left_timer_ = nh_private_.createTimer(timer_options_front_left_);
 
-        ros::TimerOptions timer_options_front_depth(ros::Duration(update_airsim_img_response_every_n_sec),
-                                boost::bind(&AirsimROSWrapper::img_response_front_depth_timer_cb, this, _1),
-                                &img_timer_cb_queue_front_depth_);
+        ros::TimerOptions timer_options_front_right_(ros::Duration(update_airsim_img_response_every_n_sec),
+                                boost::bind(&AirsimROSWrapper::img_response_front_right_timer_cb, this, _1),
+                                &img_timer_cb_queue_front_right_);
 
-        airsim_img_response_front_depth_timer_ = nh_private_.createTimer(timer_options_front_depth);
+        airsim_img_response_front_right_timer_ = nh_private_.createTimer(timer_options_front_right_);
 
-        ros::TimerOptions timer_options_bottom(ros::Duration(update_airsim_img_response_every_n_sec),
+        ros::TimerOptions timer_options_bottom_(ros::Duration(update_airsim_img_response_every_n_sec),
                                 boost::bind(&AirsimROSWrapper::img_response_bottom_timer_cb, this, _1),
                                 &img_timer_cb_queue_bottom_);
 
-        airsim_img_response_bottom_timer_ = nh_private_.createTimer(timer_options_bottom);
+        airsim_img_response_bottom_timer_ = nh_private_.createTimer(timer_options_bottom_);
 
         is_used_img_timer_cb_queue_ = true;
     }
@@ -1399,13 +1396,13 @@ void AirsimROSWrapper::img_response_timer_cb(const ros::TimerEvent& event)
     }
 }
 
-void AirsimROSWrapper::img_response_front_depth_timer_cb(const ros::TimerEvent& event)
+void AirsimROSWrapper::img_response_front_right_timer_cb(const ros::TimerEvent& event)
 {
     try {
         int image_response_idx = 0;
         // ROS_ERROR("vehicle: %s, %s, %d.", airsim_img_request_vehicle_name_pair_vec_[0].second.c_str(), front_depth_request_[0].camera_name.c_str(), front_depth_request_[0].image_type); 
-        const std::vector<ImageResponse>& img_response = airsim_client_images_.simGetImages(front_depth_request_, airsim_img_request_vehicle_name_pair_vec_[0].second);
-        if (img_response.size() == front_depth_request_.size()) {
+        const std::vector<ImageResponse>& img_response = airsim_client_images_.simGetImages(front_right_request_, airsim_img_request_vehicle_name_pair_vec_[0].second);
+        if (img_response.size() == front_right_request_.size()) {
             ros::Time curr_ros_time = ros::Time::now();
             int img_response_idx_internal = image_response_idx;
 
@@ -1421,9 +1418,9 @@ void AirsimROSWrapper::img_response_front_depth_timer_cb(const ros::TimerEvent& 
 
                 // camera_info_msg_vec_[img_response_idx_internal].header.stamp = airsim_timestamp_to_ros(curr_img_response.time_stamp);
                 // cam_info_pub_vec_[img_response_idx_internal].publish(camera_info_msg_vec_[img_response_idx_internal]);
-                front_depth_camera_info_.header.stamp =  airsim_timestamp_to_ros(curr_img_response.time_stamp);
-                front_depth_cam_info_pub_.publish(front_depth_camera_info_);
-                front_depth_pub_.publish(get_depth_img_msg_from_response(curr_img_response,
+                front_right_camera_info_.header.stamp =  airsim_timestamp_to_ros(curr_img_response.time_stamp);
+                front_right_cam_info_pub_.publish(front_right_camera_info_);
+                front_right_pub_.publish(get_img_msg_from_response(curr_img_response,
                                                                         curr_ros_time,
                                                                         curr_img_response.camera_name + "_optical"));
                 img_response_idx_internal++;
@@ -1437,12 +1434,12 @@ void AirsimROSWrapper::img_response_front_depth_timer_cb(const ros::TimerEvent& 
     }
 }
 
-void AirsimROSWrapper::img_response_front_timer_cb(const ros::TimerEvent& event)
+void AirsimROSWrapper::img_response_front_left_timer_cb(const ros::TimerEvent& event)
 {
     try {
         int image_response_idx = 0;
-        const std::vector<ImageResponse>& img_response = airsim_client_images_.simGetImages(front_request_, airsim_img_request_vehicle_name_pair_vec_[0].second);
-        if (img_response.size() == front_request_.size()) {
+        const std::vector<ImageResponse>& img_response = airsim_client_images_.simGetImages(front_left_request_, airsim_img_request_vehicle_name_pair_vec_[0].second);
+        if (img_response.size() == front_left_request_.size()) {
             ros::Time curr_ros_time = ros::Time::now();
             int img_response_idx_internal = image_response_idx;
 
@@ -1458,9 +1455,9 @@ void AirsimROSWrapper::img_response_front_timer_cb(const ros::TimerEvent& event)
 
                 // camera_info_msg_vec_[img_response_idx_internal].header.stamp = airsim_timestamp_to_ros(curr_img_response.time_stamp);
                 // cam_info_pub_vec_[img_response_idx_internal].publish(camera_info_msg_vec_[img_response_idx_internal]);
-                front_camera_info_.header.stamp =  airsim_timestamp_to_ros(curr_img_response.time_stamp);
-                front_cam_info_pub_.publish(front_camera_info_);
-                front_pub_.publish(get_img_msg_from_response(curr_img_response,
+                front_left_camera_info_.header.stamp =  airsim_timestamp_to_ros(curr_img_response.time_stamp);
+                front_left_cam_info_pub_.publish(front_left_camera_info_);
+                front_left_pub_.publish(get_img_msg_from_response(curr_img_response,
                                                                         curr_ros_time,
                                                                         curr_img_response.camera_name + "_optical"));
                 img_response_idx_internal++;

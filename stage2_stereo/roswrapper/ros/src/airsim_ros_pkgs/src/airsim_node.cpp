@@ -14,8 +14,8 @@ int main(int argc, char** argv)
 
     if (airsim_ros_wrapper.is_used_img_timer_cb_queue_) {
         // airsim_ros_wrapper.img_async_spinner_.start();
-        airsim_ros_wrapper.img_front_async_spinner_.start();
-        airsim_ros_wrapper.img_front_depth_async_spinner_.start();
+        airsim_ros_wrapper.img_front_left_async_spinner_.start();
+        airsim_ros_wrapper.img_front_right_async_spinner_.start();
         airsim_ros_wrapper.img_bottom_async_spinner_.start();
     }
 
