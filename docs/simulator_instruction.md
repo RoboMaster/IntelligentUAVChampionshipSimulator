@@ -42,7 +42,7 @@
 5. ## 安装 catkin 管理工具
     `sudo apt install python3-catkin-tools`
     
-6. ## 进入模拟器文件*gameX_XXX*的根目录
+6. ## 进入模拟器文件*stageX_XXX*的根目录
     `cd /path/to/stageX_XXX`
 
 7. ## 构建roswrapper
