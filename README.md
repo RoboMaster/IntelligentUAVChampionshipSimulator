@@ -178,4 +178,5 @@
 >+ `echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
 >+ `sudo apt-get update`
 >+ `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin`
-
+----
+> 必须先启动模拟器后再开启roswrapper,否则会出现topic无数据的问题；关闭时要先退出roswrapper在关闭模拟器，否则模拟器会卡死。
