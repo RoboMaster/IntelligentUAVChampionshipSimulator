@@ -172,7 +172,7 @@
 ## Q&A
 > 启动模拟器和roswrapper后，roswrapper显示无法连接自己的服务器,需要安装docker服务来新建相关子网。
 ![图片](doc/2022-08-05%2015-13-10%20的屏幕截图.png)
-安装docker:
+安装docker:  
 >+ `sudo apt-get install ca-certificates gnupg lsb-release`
 >+ `sudo mkdir -p /etc/apt/keyrings`
 >+ `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`
