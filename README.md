@@ -63,7 +63,7 @@
    6. ## LINUX 端启动 roswrapper
     >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper` 
     ---
-    使用脚本启动模拟器，参数为你的模拟器ip地址
+    使用脚本启动roswrapper，参数为你的模拟器ip地址
     >`./simulator.sh 127.0.0.1`
     ---
 
@@ -114,7 +114,7 @@
    6. ## A LINUX 端启动 roswrapper
     >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper` 
     ---
-    使用脚本启动模拟器，参数为你的模拟器ip地址
+    使用脚本启动roswrapper，参数为你的模拟器ip地址
     >`./simulator.sh 127.0.0.1`
     ---
 
@@ -165,7 +165,7 @@
    6. ## 启动 roswrapper
     >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper` 
     ---
-    使用脚本启动模拟器，参数为你的模拟器ip地址
+    使用脚本启动roswrapper，参数为你的模拟器ip地址
     >`./simulator.sh 127.0.0.1`
     ---
 
