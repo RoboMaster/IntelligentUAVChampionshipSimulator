@@ -135,7 +135,7 @@ struct GimbalCmd
     // GimbalCmd(const std::string& vehicle_name,
     //         const std::string& camera_name,
     //         const msr::airlib::Quaternionr& target_quat) :
-    //         vehicle_name(vehicle_name), camera_name(camera_name), target_quat(target_quat) {};
+    //         vehicle_name(vehicle_name), camera_name(camera_name), target_quat(target_quat) {};AirsimROSWrapper
 };
 
 class AirsimROSWrapper
@@ -409,12 +409,12 @@ private:
     const std::string AIRSIM_ODOM_FRAME_ID = "odom_local_ned";
     const std::string ENU_ODOM_FRAME_ID = "odom_local_enu";
     std::string odom_frame_id_ = AIRSIM_ODOM_FRAME_ID;
-    tf2_ros::TransformBroadcaster tf_broadcaster_;
-    tf2_ros::StaticTransformBroadcaster static_tf_pub_;
+    // tf2_ros::TransformBroadcaster tf_broadcaster_;
+    // tf2_ros::StaticTransformBroadcaster static_tf_pub_;
 
     bool isENU_ = false;
-    tf2_ros::Buffer tf_buffer_;
-    tf2_ros::TransformListener tf_listener_;
+    // tf2_ros::Buffer tf_buffer_;
+    // tf2_ros::TransformListener tf_listener_;
 
     /// ROS params
     double vel_cmd_duration_;

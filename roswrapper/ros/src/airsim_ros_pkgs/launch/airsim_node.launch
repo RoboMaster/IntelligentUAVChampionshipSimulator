@@ -55,5 +55,5 @@
 	</node>
 	
 	<!-- Static transforms -->
-	<include file="$(find airsim_ros_pkgs)/launch/static_transforms.launch"/>
+	<!-- include file="$(find airsim_ros_pkgs)/launch/static_transforms.launch"/-->
 </launch>
