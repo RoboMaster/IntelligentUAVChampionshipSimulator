@@ -32,6 +32,9 @@ AirsimROSWrapper::AirsimROSWrapper(const ros::NodeHandle& nh, const ros::NodeHan
     , img_stereo_async_spinner_(1, &img_timer_cb_queue_stereo_) 
     // , img_front_depth_async_spinner_(1, &img_timer_cb_queue_front_depth_) // a thread for image callbacks to be 'spun' by img_async_spinner_
     , lidar_async_spinner_(1, &lidar_timer_cb_queue_) // same as above, but for lidar
+    , drone_state_async_spinner_(1, &drone_state_timer_cb_queue_)
+    , command_listener_async_spinner_(1, &command_listener_queue_)
+    , update_commands_async_spinner_(1, &update_commands_queue_)
     , is_used_lidar_timer_cb_queue_(false)
     , is_used_img_timer_cb_queue_(false)
     , nh_(nh)
@@ -40,6 +43,7 @@ AirsimROSWrapper::AirsimROSWrapper(const ros::NodeHandle& nh, const ros::NodeHan
     , airsim_settings_parser_(host_ip)
     , airsim_client_images_(host_ip)
     , airsim_client_lidar_(host_ip)
+    , airsim_client_states_(host_ip)
     , has_gimbal_cmd_(false)
     // , tf_listener_(tf_buffer_)
 {
@@ -74,7 +78,7 @@ void AirsimROSWrapper::initialize_airsim()
         airsim_client_->confirmConnection();
         airsim_client_images_.confirmConnection();
         airsim_client_lidar_.confirmConnection();
-
+        airsim_client_states_.confirmConnection();
         for (const auto& vehicle_name_ptr_pair : vehicle_name_ptr_map_) {
             airsim_client_->enableApiControl(true, vehicle_name_ptr_pair.first); // todo expose as rosservice?
             airsim_client_->armDisarm(true, vehicle_name_ptr_pair.first); // todo exposes as rosservice?
@@ -110,15 +114,22 @@ void AirsimROSWrapper::initialize_ros()
     // nh_.getParam("max_horz_vel", max_horz_vel_)
 
     create_ros_pubs_from_settings_json();
-    airsim_control_update_timer_ = nh_private_.createTimer(ros::Duration(update_airsim_control_every_n_sec), &AirsimROSWrapper::drone_state_timer_cb, this);
+    ros::TimerOptions timer_options_control_update_(ros::Duration(update_airsim_control_every_n_sec),
+                                        boost::bind(&AirsimROSWrapper::drone_state_timer_cb, this, _1),
+                                        &drone_state_timer_cb_queue_);
+    airsim_control_update_timer_ = nh_private_.createTimer(timer_options_control_update_);
+    ros::TimerOptions timer_options_control_update2_(ros::Duration(update_airsim_control_every_n_sec),
+                                        boost::bind(&AirsimROSWrapper::update_commands, this, _1),
+                                        &update_commands_queue_);
+    airsim_control_update_timer2_ = nh_private_.createTimer(timer_options_control_update2_);
 }
 
 // XmlRpc::XmlRpcValue can't be const in this case
 void AirsimROSWrapper::create_ros_pubs_from_settings_json()
 {
     // subscribe to control commands on global nodehandle
-    gimbal_angle_quat_cmd_sub_ = nh_private_.subscribe("gimbal_angle_quat_cmd", 50, &AirsimROSWrapper::gimbal_angle_quat_cmd_cb, this);
-    gimbal_angle_euler_cmd_sub_ = nh_private_.subscribe("gimbal_angle_euler_cmd", 50, &AirsimROSWrapper::gimbal_angle_euler_cmd_cb, this);
+    // gimbal_angle_quat_cmd_sub_ = nh_private_.subscribe("gimbal_angle_quat_cmd", 50, &AirsimROSWrapper::gimbal_angle_quat_cmd_cb, this);
+    // gimbal_angle_euler_cmd_sub_ = nh_private_.subscribe("gimbal_angle_euler_cmd", 50, &AirsimROSWrapper::gimbal_angle_euler_cmd_cb, this);
     // origin_geo_point_pub_ = nh_private_.advertise<airsim_ros_pkgs::GPSYaw>("origin_geo_point", 10);
 
     airsim_img_request_vehicle_name_pair_vec_.clear();
@@ -162,36 +173,59 @@ void AirsimROSWrapper::create_ros_pubs_from_settings_json()
         if (airsim_mode_ == AIRSIM_MODE::DRONE) {
             auto drone = static_cast<MultiRotorROS*>(vehicle_ros.get());
 
-            drone->pose_cmd_body_frame_sub = nh_private_.subscribe<airsim_ros_pkgs::PoseCmd>(
-                curr_vehicle_name + "/pose_cmd_body_frame",
-                1,
-                boost::bind(&AirsimROSWrapper::pose_cmd_body_frame_cb, this, _1, vehicle_ros->vehicle_name));
-
-            drone->angle_rate_throttle_frame_sub = nh_private_.subscribe<airsim_ros_pkgs::AngleRateThrottle>(
-                curr_vehicle_name + "/angle_rate_throttle_frame",
-                1,
-                boost::bind(&AirsimROSWrapper::angle_rate_throttle_frame_cb, this, _1, vehicle_ros->vehicle_name));
+            ros::SubscribeOptions ops1 = ros::SubscribeOptions::create<airsim_ros_pkgs::PoseCmd>(
+                                                                                                curr_vehicle_name + "/pose_cmd_body_frame", // topic name
+                                                                                                1, // queue length
+                                                                                                boost::bind(&AirsimROSWrapper::pose_cmd_body_frame_cb, this, _1, vehicle_ros->vehicle_name), // callback
+                                                                                                ros::VoidPtr(), // tracked object, we don't need one thus NULL
+                                                                                                &command_listener_queue_ // pointer to callback queue object
+                                                                                                );
+            drone->pose_cmd_body_frame_sub = nh_private_.subscribe(ops1);
 
             // bind to a single callback. todo optimal subs queue length
             // bind multiple topics to a single callback, but keep track of which vehicle name it was by passing curr_vehicle_name as the 2nd argument
-            drone->vel_cmd_body_frame_sub = nh_private_.subscribe<airsim_ros_pkgs::VelCmd>(
-                curr_vehicle_name + "/vel_cmd_body_frame",
-                1,
-                boost::bind(&AirsimROSWrapper::vel_cmd_body_frame_cb, this, _1, vehicle_ros->vehicle_name));
-            // TODO: ros::TransportHints().tcpNoDelay();
+
+            ros::SubscribeOptions ops2 = ros::SubscribeOptions::create<airsim_ros_pkgs::AngleRateThrottle>(
+                                                                                                curr_vehicle_name + "/angle_rate_throttle_frame", // topic name
+                                                                                                1, // queue length
+                                                                                                boost::bind(&AirsimROSWrapper::angle_rate_throttle_frame_cb, this, _1, vehicle_ros->vehicle_name), // callback
+                                                                                                ros::VoidPtr(), // tracked object, we don't need one thus NULL
+                                                                                                &command_listener_queue_ // pointer to callback queue object
+                                                                                                );
+            drone->angle_rate_throttle_frame_sub = nh_private_.subscribe(ops2);
+
+            ros::SubscribeOptions ops3 = ros::SubscribeOptions::create<airsim_ros_pkgs::VelCmd>(
+                                                                                                curr_vehicle_name + "/vel_cmd_body_frame", // topic name
+                                                                                                1, // queue length
+                                                                                                boost::bind(&AirsimROSWrapper::vel_cmd_body_frame_cb, this, _1, vehicle_ros->vehicle_name), // callback
+                                                                                                ros::VoidPtr(), // tracked object, we don't need one thus NULL
+                                                                                                &command_listener_queue_ // pointer to callback queue object
+                                                                                                );
+            drone->vel_cmd_body_frame_sub = nh_private_.subscribe(ops3);   
+                     // TODO: ros::TransportHints().tcpNoDelay();
 
             // drone->vel_cmd_world_frame_sub = nh_private_.subscribe<airsim_ros_pkgs::VelCmd>(
             //     curr_vehicle_name + "/vel_cmd_world_frame",
             //     1,
             //     boost::bind(&AirsimROSWrapper::vel_cmd_world_frame_cb, this, _1, vehicle_ros->vehicle_name));
 
-            drone->takeoff_srvr = nh_private_.advertiseService<airsim_ros_pkgs::Takeoff::Request, airsim_ros_pkgs::Takeoff::Response>(
+            ros::AdvertiseServiceOptions sops1 = ros::AdvertiseServiceOptions::create<airsim_ros_pkgs::Takeoff>(
                 curr_vehicle_name + "/takeoff",
-                boost::bind(&AirsimROSWrapper::takeoff_srv_cb, this, _1, _2, vehicle_ros->vehicle_name));
+                boost::bind(&AirsimROSWrapper::takeoff_srv_cb, this, _1, _2, vehicle_ros->vehicle_name),
+                ros::VoidPtr(),
+                &command_listener_queue_
+            );
 
-            drone->land_srvr = nh_private_.advertiseService<airsim_ros_pkgs::Land::Request, airsim_ros_pkgs::Land::Response>(
+            drone->takeoff_srvr = nh_private_.advertiseService(sops1);
+
+            ros::AdvertiseServiceOptions sops2 = ros::AdvertiseServiceOptions::create<airsim_ros_pkgs::Land>(
                 curr_vehicle_name + "/land",
-                boost::bind(&AirsimROSWrapper::land_srv_cb, this, _1, _2, vehicle_ros->vehicle_name));
+                boost::bind(&AirsimROSWrapper::land_srv_cb, this, _1, _2, vehicle_ros->vehicle_name),
+                ros::VoidPtr(),
+                &command_listener_queue_
+            );
+
+            drone->land_srvr = nh_private_.advertiseService(sops2);
 
             // vehicle_ros.reset_srvr = nh_private_.advertiseService(curr_vehicle_name + "/reset",&AirsimROSWrapper::reset_srv_cb, this);
         }
@@ -710,21 +744,21 @@ void AirsimROSWrapper::vel_cmd_all_world_frame_cb(const airsim_ros_pkgs::VelCmd&
 }
 
 // todo support multiple gimbal commands
-void AirsimROSWrapper::gimbal_angle_quat_cmd_cb(const airsim_ros_pkgs::GimbalAngleQuatCmd& gimbal_angle_quat_cmd_msg)
-{
-    tf2::Quaternion quat_control_cmd;
-    try {
-        tf2::convert(gimbal_angle_quat_cmd_msg.orientation, quat_control_cmd);
-        quat_control_cmd.normalize();
-        gimbal_cmd_.target_quat = get_airlib_quat(quat_control_cmd); // airsim uses wxyz
-        gimbal_cmd_.camera_name = gimbal_angle_quat_cmd_msg.camera_name;
-        gimbal_cmd_.vehicle_name = gimbal_angle_quat_cmd_msg.vehicle_name;
-        has_gimbal_cmd_ = true;
-    }
-    catch (tf2::TransformException& ex) {
-        ROS_WARN("%s", ex.what());
-    }
-}
+// void AirsimROSWrapper::gimbal_angle_quat_cmd_cb(const airsim_ros_pkgs::GimbalAngleQuatCmd& gimbal_angle_quat_cmd_msg)
+// {
+//     tf2::Quaternion quat_control_cmd;
+//     try {
+//         tf2::convert(gimbal_angle_quat_cmd_msg.orientation, quat_control_cmd);
+//         quat_control_cmd.normalize();
+//         gimbal_cmd_.target_quat = get_airlib_quat(quat_control_cmd); // airsim uses wxyz
+//         gimbal_cmd_.camera_name = gimbal_angle_quat_cmd_msg.camera_name;
+//         gimbal_cmd_.vehicle_name = gimbal_angle_quat_cmd_msg.vehicle_name;
+//         has_gimbal_cmd_ = true;
+//     }
+//     catch (tf2::TransformException& ex) {
+//         ROS_WARN("%s", ex.what());
+//     }
+// }
 
 // todo support multiple gimbal commands
 // 1. find quaternion of default gimbal pose
@@ -1061,7 +1095,7 @@ void AirsimROSWrapper::drone_state_timer_cb(const ros::TimerEvent& event)
         const auto now = update_state();
 
         // on init, will publish 0 to /clock as expected for use_sim_time compatibility
-        if (!airsim_client_->simIsPaused()) {
+        if (!airsim_client_states_.simIsPaused()) {
             // airsim_client needs to provide the simulation time in a future version of the API
             ros_clock_.clock = now;
         }
@@ -1074,7 +1108,7 @@ void AirsimROSWrapper::drone_state_timer_cb(const ros::TimerEvent& event)
         publish_vehicle_state();
 
         // send any commands out to the vehicles
-        update_commands();
+        // update_commands();
     }
     catch (rpc::rpc_error& e) {
         std::cout << "error" << std::endl;
@@ -1110,11 +1144,11 @@ ros::Time AirsimROSWrapper::update_state()
         auto& vehicle_ros = vehicle_name_ptr_pair.second;
 
         // vehicle environment, we can get ambient temperature here and other truths
-        auto env_data = airsim_client_->simGetGroundTruthEnvironment(vehicle_ros->vehicle_name);
+        // auto env_data = airsim_client_->simGetGroundTruthEnvironment(vehicle_ros->vehicle_name);
 
         if (airsim_mode_ == AIRSIM_MODE::DRONE) {
             auto drone = static_cast<MultiRotorROS*>(vehicle_ros.get());
-            drone->curr_drone_state = get_multirotor_client()->getMultirotorState(vehicle_ros->vehicle_name);
+            drone->curr_drone_state = airsim_client_states_.getMultirotorState(vehicle_ros->vehicle_name);
 
             vehicle_time = airsim_timestamp_to_ros(drone->curr_drone_state.timestamp);
             if (!got_sim_time) {
@@ -1122,8 +1156,8 @@ ros::Time AirsimROSWrapper::update_state()
                 got_sim_time = true;
             }
 
-            vehicle_ros->gps_sensor_msg = get_gps_sensor_msg_from_airsim_geo_point(drone->curr_drone_state.gps_location);
-            vehicle_ros->gps_sensor_msg.header.stamp = vehicle_time;
+            // vehicle_ros->gps_sensor_msg = get_gps_sensor_msg_from_airsim_geo_point(drone->curr_drone_state.gps_location);
+            // vehicle_ros->gps_sensor_msg.header.stamp = vehicle_time;
 
             vehicle_ros->curr_odom = get_odom_msg_from_multirotor_state(drone->curr_drone_state);
         }
@@ -1137,8 +1171,8 @@ ros::Time AirsimROSWrapper::update_state()
                 got_sim_time = true;
             }
 
-            vehicle_ros->gps_sensor_msg = get_gps_sensor_msg_from_airsim_geo_point(env_data.geo_point);
-            vehicle_ros->gps_sensor_msg.header.stamp = vehicle_time;
+            // vehicle_ros->gps_sensor_msg = get_gps_sensor_msg_from_airsim_geo_point(env_data.geo_point);
+            // vehicle_ros->gps_sensor_msg.header.stamp = vehicle_time;
 
             vehicle_ros->curr_odom = get_odom_msg_from_car_state(car->curr_car_state);
 
@@ -1149,10 +1183,10 @@ ros::Time AirsimROSWrapper::update_state()
 
         vehicle_ros->stamp = vehicle_time;
 
-        airsim_ros_pkgs::Environment env_msg = get_environment_msg_from_airsim(env_data);
-        env_msg.header.frame_id = vehicle_ros->vehicle_name;
-        env_msg.header.stamp = vehicle_time;
-        vehicle_ros->env_msg = env_msg;
+        // airsim_ros_pkgs::Environment env_msg = get_environment_msg_from_airsim(env_data);
+        // env_msg.header.frame_id = vehicle_ros->vehicle_name;
+        // env_msg.header.stamp = vehicle_time;
+        // vehicle_ros->env_msg = env_msg;
 
         // convert airsim drone state to ROS msgs
         vehicle_ros->curr_odom.header.frame_id = vehicle_ros->vehicle_name;
@@ -1194,7 +1228,7 @@ void AirsimROSWrapper::publish_vehicle_state()
                 break;
             }
             case SensorBase::SensorType::Imu: {
-                auto imu_data = airsim_client_->getImuData(sensor_publisher.sensor_name, vehicle_ros->vehicle_name);
+                auto imu_data = airsim_client_states_.getImuData(sensor_publisher.sensor_name, vehicle_ros->vehicle_name);
                 sensor_msgs::Imu imu_msg = get_imu_msg_from_airsim(imu_data);
                 imu_msg.header.frame_id = vehicle_ros->vehicle_name;
                 sensor_publisher.publisher.publish(imu_msg);
@@ -1232,7 +1266,7 @@ void AirsimROSWrapper::publish_vehicle_state()
     }
 }
 
-void AirsimROSWrapper::update_commands()
+void AirsimROSWrapper::update_commands(const ros::TimerEvent& event)
 {
     for (auto& vehicle_name_ptr_pair : vehicle_name_ptr_map_) {
         auto& vehicle_ros = vehicle_name_ptr_pair.second;
@@ -1589,14 +1623,6 @@ sensor_msgs::ImagePtr AirsimROSWrapper::get_depth_img_msg_from_response(const Im
     // hence the dependency on opencv and cv_bridge. however, this is an extremely fast op, so no big deal.
     cv::Mat depth_img = manual_decode_depth(img_response);
     cv::threshold(depth_img, depth_img, 10, 10, cv::THRESH_TOZERO_INV);
-    //     float* ptr = (float*)depth_img.data;
-    // for(int i=0;i<depth_img.cols*depth_img.rows;i++)
-    // {   
-    //     if(*ptr > 10){
-    //         *ptr = 0; 
-    //     } 
-    //     ptr ++;
-    // }
     sensor_msgs::ImagePtr depth_img_msg = cv_bridge::CvImage(std_msgs::Header(), "32FC1", depth_img).toImageMsg();
     depth_img_msg->header.stamp = airsim_timestamp_to_ros(img_response.time_stamp);
     depth_img_msg->header.frame_id = frame_id;

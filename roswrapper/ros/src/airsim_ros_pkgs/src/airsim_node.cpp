@@ -13,7 +13,9 @@ int main(int argc, char** argv)
     std::string host_ip = "localhost";
     nh_private.getParam("host_ip", host_ip);
     AirsimROSWrapper airsim_ros_wrapper(nh, nh_private, host_ip);
-
+    airsim_ros_wrapper.drone_state_async_spinner_.start();
+    airsim_ros_wrapper.update_commands_async_spinner_.start();
+    airsim_ros_wrapper.command_listener_async_spinner_.start();
     if (airsim_ros_wrapper.is_used_img_timer_cb_queue_) {
         if(airsim_ros_wrapper.is_RGBD_)
         {
@@ -32,7 +34,6 @@ int main(int argc, char** argv)
         airsim_ros_wrapper.lidar_async_spinner_.start();
     }
 
-    ros::spin();
-
+    ros::waitForShutdown();
     return 0;
 }

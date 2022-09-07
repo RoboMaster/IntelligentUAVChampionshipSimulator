@@ -135,7 +135,7 @@ struct GimbalCmd
     // GimbalCmd(const std::string& vehicle_name,
     //         const std::string& camera_name,
     //         const msr::airlib::Quaternionr& target_quat) :
-    //         vehicle_name(vehicle_name), camera_name(camera_name), target_quat(target_quat) {};AirsimROSWrapper
+    //         vehicle_name(vehicle_name), camera_name(camera_name), target_quat(target_quat) {};
 };
 
 class AirsimROSWrapper
@@ -173,6 +173,9 @@ public:
     ros::AsyncSpinner img_stereo_async_spinner_;
     ros::AsyncSpinner img_bottom_async_spinner_;
     ros::AsyncSpinner lidar_async_spinner_;
+    ros::AsyncSpinner drone_state_async_spinner_;
+    ros::AsyncSpinner command_listener_async_spinner_;
+    ros::AsyncSpinner update_commands_async_spinner_;
     bool is_used_lidar_timer_cb_queue_;
     bool is_used_img_timer_cb_queue_;
 
@@ -283,7 +286,7 @@ private:
 
     // commands
     void car_cmd_cb(const airsim_ros_pkgs::CarControls::ConstPtr& msg, const std::string& vehicle_name);
-    void update_commands();
+    void update_commands(const ros::TimerEvent& event);
 
     // state, returns the simulation timestamp best guess based on drone state timestamp, airsim needs to return timestap for environment
     ros::Time update_state();
@@ -385,7 +388,8 @@ private:
     std::unique_ptr<msr::airlib::RpcLibClientBase> airsim_client_ = nullptr;
     // seperate busy connections to airsim, update in their own thread
     msr::airlib::RpcLibClientBase airsim_client_images_;
-    msr::airlib::RpcLibClientBase airsim_client_lidar_;
+    msr::airlib::MultirotorRpcLibClient airsim_client_states_;
+     msr::airlib::RpcLibClientBase airsim_client_lidar_;
 
     // todo not sure if async spinners shuold be inside this class, or should be instantiated in airsim_node.cpp, and cb queues should be public
     // todo for multiple drones with multiple sensors, this won't scale. make it a part of VehicleROS?
@@ -394,6 +398,10 @@ private:
     ros::CallbackQueue img_timer_cb_queue_stereo_;
     ros::CallbackQueue img_timer_cb_queue_bottom_;
     ros::CallbackQueue lidar_timer_cb_queue_;
+    ros::CallbackQueue drone_state_timer_cb_queue_;
+    ros::CallbackQueue command_listener_queue_;
+    // ros::CallbackQueue default_queue_;
+    ros::CallbackQueue update_commands_queue_;
 
     bool img_cb_flag = 0;
 
@@ -425,6 +433,7 @@ private:
     ros::Timer airsim_img_response_RGBD_timer_;
     ros::Timer airsim_img_response_stereo_timer_;
     ros::Timer airsim_control_update_timer_;
+    ros::Timer airsim_control_update_timer2_;
     ros::Timer airsim_lidar_update_timer_;
 
     typedef std::pair<std::vector<ImageRequest>, std::string> airsim_img_request_vehicle_name_pair;
