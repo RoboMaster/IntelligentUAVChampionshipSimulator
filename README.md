@@ -1,7 +1,8 @@
 # __自主无人机竞速模拟器使用说明__  
 1. ## 更新说明
-### 0907: 
-   1. 修复imu帧率下降，未经稳定性测试，非正式版；
+### 0909-未经稳定性测试，非正式版: 
+   1. 修复imu帧率下降问题；
+   2. 修复图像时间戳延迟问题；
    ---
 ### 0830: 
    1. 相机配置文件中的x, y, z 数值 乘以二， 纠正因提及缩放导致的误差；
@@ -64,7 +65,7 @@
 
    5. ## WIN 端下载并启动模拟器
     >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_WIN.zip`
+    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_WIN_0909.zip`
     ---
     >解压后进入文件夹中，参考simulator_WIN.md 启动模拟器  
     ![pic](doc/2022-08-18%2015-26-03%20的屏幕截图.png)

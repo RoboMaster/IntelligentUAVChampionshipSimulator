@@ -172,11 +172,11 @@ public:
     ros::AsyncSpinner img_RGBD_async_spinner_;
     ros::AsyncSpinner img_stereo_async_spinner_;
     ros::AsyncSpinner img_bottom_async_spinner_;
-    ros::AsyncSpinner lidar_async_spinner_;
+    //ros::AsyncSpinner lidar_async_spinner_;
     ros::AsyncSpinner drone_state_async_spinner_;
     ros::AsyncSpinner command_listener_async_spinner_;
-    ros::AsyncSpinner update_commands_async_spinner_;
-    bool is_used_lidar_timer_cb_queue_;
+    // ros::AsyncSpinner update_commands_async_spinner_;
+    // bool is_used_lidar_timer_cb_queue_;
     bool is_used_img_timer_cb_queue_;
 
 private:
@@ -265,20 +265,20 @@ private:
     void img_response_RGBD_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
     void img_response_stereo_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
     void drone_state_timer_cb(const ros::TimerEvent& event); // update drone state from airsim_client_ every nth sec
-    void lidar_timer_cb(const ros::TimerEvent& event);
+    // void lidar_timer_cb(const ros::TimerEvent& event);
 
     /// ROS subscriber callbacks
     void pose_cmd_body_frame_cb(const airsim_ros_pkgs::PoseCmd::ConstPtr& msg, const std::string& vehicle_name);
-    void vel_cmd_world_frame_cb(const airsim_ros_pkgs::VelCmd::ConstPtr& msg, const std::string& vehicle_name);
+    // void vel_cmd_world_frame_cb(const airsim_ros_pkgs::VelCmd::ConstPtr& msg, const std::string& vehicle_name);
     void vel_cmd_body_frame_cb(const airsim_ros_pkgs::VelCmd::ConstPtr& msg, const std::string& vehicle_name);
 
     void angle_rate_throttle_frame_cb(const airsim_ros_pkgs::AngleRateThrottle::ConstPtr& msg, const std::string& vehicle_name);
 
-    void vel_cmd_group_body_frame_cb(const airsim_ros_pkgs::VelCmdGroup& msg);
-    void vel_cmd_group_world_frame_cb(const airsim_ros_pkgs::VelCmdGroup& msg);
+    // void vel_cmd_group_body_frame_cb(const airsim_ros_pkgs::VelCmdGroup& msg);
+    // void vel_cmd_group_world_frame_cb(const airsim_ros_pkgs::VelCmdGroup& msg);
 
-    void vel_cmd_all_world_frame_cb(const airsim_ros_pkgs::VelCmd& msg);
-    void vel_cmd_all_body_frame_cb(const airsim_ros_pkgs::VelCmd& msg);
+    // void vel_cmd_all_world_frame_cb(const airsim_ros_pkgs::VelCmd& msg);
+    // void vel_cmd_all_body_frame_cb(const airsim_ros_pkgs::VelCmd& msg);
 
     // void vel_cmd_body_frame_cb(const airsim_ros_pkgs::VelCmd& msg, const std::string& vehicle_name);
     void gimbal_angle_quat_cmd_cb(const airsim_ros_pkgs::GimbalAngleQuatCmd& gimbal_angle_quat_cmd_msg);
@@ -286,7 +286,7 @@ private:
 
     // commands
     void car_cmd_cb(const airsim_ros_pkgs::CarControls::ConstPtr& msg, const std::string& vehicle_name);
-    void update_commands(const ros::TimerEvent& event);
+    // void update_commands(const ros::TimerEvent& event);
 
     // state, returns the simulation timestamp best guess based on drone state timestamp, airsim needs to return timestap for environment
     ros::Time update_state();
@@ -295,16 +295,16 @@ private:
 
     /// ROS service callbacks
     bool takeoff_srv_cb(airsim_ros_pkgs::Takeoff::Request& request, airsim_ros_pkgs::Takeoff::Response& response, const std::string& vehicle_name);
-    bool takeoff_group_srv_cb(airsim_ros_pkgs::TakeoffGroup::Request& request, airsim_ros_pkgs::TakeoffGroup::Response& response);
-    bool takeoff_all_srv_cb(airsim_ros_pkgs::Takeoff::Request& request, airsim_ros_pkgs::Takeoff::Response& response);
+    // bool takeoff_group_srv_cb(airsim_ros_pkgs::TakeoffGroup::Request& request, airsim_ros_pkgs::TakeoffGroup::Response& response);
+    // bool takeoff_all_srv_cb(airsim_ros_pkgs::Takeoff::Request& request, airsim_ros_pkgs::Takeoff::Response& response);
     bool land_srv_cb(airsim_ros_pkgs::Land::Request& request, airsim_ros_pkgs::Land::Response& response, const std::string& vehicle_name);
-    bool land_group_srv_cb(airsim_ros_pkgs::LandGroup::Request& request, airsim_ros_pkgs::LandGroup::Response& response);
-    bool land_all_srv_cb(airsim_ros_pkgs::Land::Request& request, airsim_ros_pkgs::Land::Response& response);
-    bool reset_srv_cb(airsim_ros_pkgs::Reset::Request& request, airsim_ros_pkgs::Reset::Response& response);
+    // bool land_group_srv_cb(airsim_ros_pkgs::LandGroup::Request& request, airsim_ros_pkgs::LandGroup::Response& response);
+    // bool land_all_srv_cb(airsim_ros_pkgs::Land::Request& request, airsim_ros_pkgs::Land::Response& response);
+    // bool reset_srv_cb(airsim_ros_pkgs::Reset::Request& request, airsim_ros_pkgs::Reset::Response& response);
 
     /// ROS tf broadcasters
-    void publish_camera_tf(const ImageResponse& img_response, const ros::Time& ros_time, const std::string& frame_id, const std::string& child_frame_id);
-    void publish_odom_tf(const nav_msgs::Odometry& odom_msg);
+    // void publish_camera_tf(const ImageResponse& img_response, const ros::Time& ros_time, const std::string& frame_id, const std::string& child_frame_id);
+    // void publish_odom_tf(const nav_msgs::Odometry& odom_msg);
 
     /// camera helper methods
     sensor_msgs::CameraInfo generate_cam_info(const std::string& camera_name, const CameraSetting& camera_setting, const CaptureSetting& capture_setting) const;
@@ -361,16 +361,16 @@ private:
     std::string host_ip_;
 
     // subscriber / services for ALL robots
-    ros::Subscriber vel_cmd_all_body_frame_sub_;
-    ros::Subscriber vel_cmd_all_world_frame_sub_;
-    ros::ServiceServer takeoff_all_srvr_;
-    ros::ServiceServer land_all_srvr_;
+    // ros::Subscriber vel_cmd_all_body_frame_sub_;
+    // ros::Subscriber vel_cmd_all_world_frame_sub_;
+    // ros::ServiceServer takeoff_all_srvr_;
+    // ros::ServiceServer land_all_srvr_;
 
     // todo - subscriber / services for a GROUP of robots, which is defined by a list of `vehicle_name`s passed in the ros msg / srv request
-    ros::Subscriber vel_cmd_group_body_frame_sub_;
-    ros::Subscriber vel_cmd_group_world_frame_sub_;
-    ros::ServiceServer takeoff_group_srvr_;
-    ros::ServiceServer land_group_srvr_;
+    // ros::Subscriber vel_cmd_group_body_frame_sub_;
+    // ros::Subscriber vel_cmd_group_world_frame_sub_;
+    // ros::ServiceServer takeoff_group_srvr_;
+    // ros::ServiceServer land_group_srvr_;
 
     AIRSIM_MODE airsim_mode_ = AIRSIM_MODE::DRONE;
 
@@ -389,7 +389,7 @@ private:
     // seperate busy connections to airsim, update in their own thread
     msr::airlib::RpcLibClientBase airsim_client_images_;
     msr::airlib::MultirotorRpcLibClient airsim_client_states_;
-     msr::airlib::RpcLibClientBase airsim_client_lidar_;
+    // msr::airlib::RpcLibClientBase airsim_client_lidar_;
 
     // todo not sure if async spinners shuold be inside this class, or should be instantiated in airsim_node.cpp, and cb queues should be public
     // todo for multiple drones with multiple sensors, this won't scale. make it a part of VehicleROS?
@@ -397,11 +397,11 @@ private:
     ros::CallbackQueue img_timer_cb_queue_RGBD_;
     ros::CallbackQueue img_timer_cb_queue_stereo_;
     ros::CallbackQueue img_timer_cb_queue_bottom_;
-    ros::CallbackQueue lidar_timer_cb_queue_;
+    // ros::CallbackQueue lidar_timer_cb_queue_;
     ros::CallbackQueue drone_state_timer_cb_queue_;
     ros::CallbackQueue command_listener_queue_;
     // ros::CallbackQueue default_queue_;
-    ros::CallbackQueue update_commands_queue_;
+    // ros::CallbackQueue update_commands_queue_;
 
     bool img_cb_flag = 0;
 
@@ -433,8 +433,8 @@ private:
     ros::Timer airsim_img_response_RGBD_timer_;
     ros::Timer airsim_img_response_stereo_timer_;
     ros::Timer airsim_control_update_timer_;
-    ros::Timer airsim_control_update_timer2_;
-    ros::Timer airsim_lidar_update_timer_;
+    // ros::Timer airsim_control_update_timer2_;
+    // ros::Timer airsim_lidar_update_timer_;
 
     typedef std::pair<std::vector<ImageRequest>, std::string> airsim_img_request_vehicle_name_pair;
     std::vector<airsim_img_request_vehicle_name_pair> airsim_img_request_vehicle_name_pair_vec_;
