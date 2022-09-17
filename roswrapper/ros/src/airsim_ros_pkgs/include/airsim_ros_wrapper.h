@@ -295,7 +295,7 @@ private:
 
     /// ROS service callbacks
     bool takeoff_srv_cb(airsim_ros_pkgs::Takeoff::Request& request, airsim_ros_pkgs::Takeoff::Response& response, const std::string& vehicle_name);
-    // bool takeoff_group_srv_cb(airsim_ros_pkgs::TakeoffGroup::Request& request, airsim_ros_pkgs::TakeoffGroup::Response& response);
+    //bool takeoff_group_srv_cb(airsim_ros_pkgs::TakeoffGroup::Request& request, airsim_ros_pkgs::TakeoffGroup::Response& response);
     // bool takeoff_all_srv_cb(airsim_ros_pkgs::Takeoff::Request& request, airsim_ros_pkgs::Takeoff::Response& response);
     bool land_srv_cb(airsim_ros_pkgs::Land::Request& request, airsim_ros_pkgs::Land::Response& response, const std::string& vehicle_name);
     // bool land_group_srv_cb(airsim_ros_pkgs::LandGroup::Request& request, airsim_ros_pkgs::LandGroup::Response& response);
@@ -426,7 +426,9 @@ private:
 
     /// ROS params
     double vel_cmd_duration_;
-
+    
+    long long last_cmd_time;
+    
     /// ROS Timers.
     ros::Timer airsim_img_response_timer_;
     ros::Timer airsim_img_response_bottom_timer_;

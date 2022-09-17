@@ -1,6 +1,10 @@
 # __自主无人机竞速模拟器使用说明__  
 1. ## 更新说明
-### 0909-未经稳定性测试，非正式版: 
+### v1.1.1 
+   1. 模拟器版本更新 -> v1.1.1; 赛道一， 赛道二添加了视觉标定板， 具体参数参考模拟器根目录README文件; 赛道二动态圈发生碰撞时会停止，防止卡主无人机；
+   2. roswrapper限制了控制命令的发布频率为100hz；
+
+### v1.1.0-未经稳定性测试，非正式版: 
    1. 修复imu帧率下降问题；
    2. 修复图像时间戳延迟问题；
    ---
@@ -65,7 +69,7 @@
 
    5. ## WIN 端下载并启动模拟器
     >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_WIN_0909.zip`
+    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_WIN_V1_1_1.zip`
     ---
     >解压后进入文件夹中，参考simulator_WIN.md 启动模拟器  
     ![pic](doc/2022-08-18%2015-26-03%20的屏幕截图.png)
@@ -79,7 +83,7 @@
 
 3. ## LINUX + LINUX 双机开发模式
     ### 简介
-    双击模式分离后免除了ros 端程序对模拟器的影响，使得开发更便利。但是 Linux端运行模拟器对帧率有较大的影响。使用 Linux 端 clone此仓库。
+    双机模式分离后免除了ros 端程序对模拟器的影响，使得开发更便利。但是 Linux端运行模拟器对帧率有较大的影响。使用 Linux 端 clone此仓库。
     ### 使用说明
    1. ## A LINUX 端安装ROS noetic
     >设置软件库   
@@ -116,7 +120,7 @@
 
    5. ## B LINUX 端下载并启动模拟器
     >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX.zip`
+    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX_V1_1_1.zip`
     ---
     >解压后进入文件夹中，参考simulator_LINUX.md 启动模拟器  
     ![pic](doc/2022-08-18%2015-35-08%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
@@ -167,7 +171,7 @@
 
    5. ## 下载模拟器
     >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX.zip`
+    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX_V1_1_1.zip`
     ---
     >解压后进入文件夹中，参考simulator_LINUX.md 启动模拟器  
     ![pic](doc/2022-08-18%2015-35-08%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)

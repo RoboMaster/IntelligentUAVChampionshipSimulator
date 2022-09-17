@@ -598,69 +598,85 @@ msr::airlib::Pose AirsimROSWrapper::get_airlib_pose(const float& x, const float&
 
 void AirsimROSWrapper::pose_cmd_body_frame_cb(const airsim_ros_pkgs::PoseCmd::ConstPtr& msg, const std::string& vehicle_name)
 {
-    std::lock_guard<std::mutex> guard(drone_control_mutex_);
+    long long t  = std::chrono::system_clock().now().time_since_epoch().count();
+    if(t - last_cmd_time > 10000000)
+    {
+        std::lock_guard<std::mutex> guard(drone_control_mutex_);
 
-    auto drone = static_cast<MultiRotorROS*>(vehicle_name_ptr_map_[vehicle_name].get());
+        auto drone = static_cast<MultiRotorROS*>(vehicle_name_ptr_map_[vehicle_name].get());
 
-    drone->pose_cmd. roll = msg->roll;
-    drone->pose_cmd. pitch = msg->pitch;
-    drone->pose_cmd. yaw = msg->yaw;
-    drone->pose_cmd. throttle = msg->throttle;
-    // airsim uses degrees
-    drone->has_pose_cmd = true;
-    get_multirotor_client()->moveByRollPitchYawThrottleAsync(drone->pose_cmd.roll,
-                                                             drone->pose_cmd.pitch,
-                                                             drone->pose_cmd.yaw,
-                                                             drone->pose_cmd.throttle,
-                                                             vel_cmd_duration_,
-                                                             drone->vehicle_name);
+        drone->pose_cmd. roll = msg->roll;
+        drone->pose_cmd. pitch = msg->pitch;
+        drone->pose_cmd. yaw = msg->yaw;
+        drone->pose_cmd. throttle = msg->throttle;
+        // airsim uses degrees
+        drone->has_pose_cmd = true;
+        get_multirotor_client()->moveByRollPitchYawThrottleAsync(drone->pose_cmd.roll,
+                                                                drone->pose_cmd.pitch,
+                                                                drone->pose_cmd.yaw,
+                                                                drone->pose_cmd.throttle,
+                                                                vel_cmd_duration_,
+                                                                drone->vehicle_name);
+        last_cmd_time = t;
+    }
 }
 
 
 // void AirsimROSWrapper::vel_cmd_body_frame_cb(const airsim_ros_pkgs::VelCmd& msg, const std::string& vehicle_name)
 void AirsimROSWrapper::vel_cmd_body_frame_cb(const airsim_ros_pkgs::VelCmd::ConstPtr& msg, const std::string& vehicle_name)
 {
-    std::lock_guard<std::mutex> guard(drone_control_mutex_);
+    long long t  = std::chrono::system_clock().now().time_since_epoch().count();
+    if(t - last_cmd_time > 10000000)
+    {
+        std::lock_guard<std::mutex> guard(drone_control_mutex_);
 
-    auto drone = static_cast<MultiRotorROS*>(vehicle_name_ptr_map_[vehicle_name].get());
+        auto drone = static_cast<MultiRotorROS*>(vehicle_name_ptr_map_[vehicle_name].get());
 
-    double roll, pitch, yaw;
-    tf2::Matrix3x3(get_tf2_quat(drone->curr_drone_state.kinematics_estimated.pose.orientation)).getRPY(roll, pitch, yaw); // ros uses xyzw
+        double roll, pitch, yaw;
+        tf2::Matrix3x3(get_tf2_quat(drone->curr_drone_state.kinematics_estimated.pose.orientation)).getRPY(roll, pitch, yaw); // ros uses xyzw
 
-    // todo do actual body frame?
-    drone->vel_cmd.x = (msg->twist.linear.x * cos(yaw)) - (msg->twist.linear.y * sin(yaw)); //body frame assuming zero pitch roll
-    drone->vel_cmd.y = (msg->twist.linear.x * sin(yaw)) + (msg->twist.linear.y * cos(yaw)); //body frame
-    drone->vel_cmd.z = msg->twist.linear.z;
-    drone->vel_cmd.drivetrain = msr::airlib::DrivetrainType::MaxDegreeOfFreedom;
-    drone->vel_cmd.yaw_mode.is_rate = true;
-    // airsim uses degrees
-    drone->vel_cmd.yaw_mode.yaw_or_rate = math_common::rad2deg(msg->twist.angular.z);
-    drone->has_vel_cmd = true;
-    get_multirotor_client()->moveByVelocityAsync(drone->vel_cmd.x,
+        // todo do actual body frame?
+        drone->vel_cmd.x = (msg->twist.linear.x * cos(yaw)) - (msg->twist.linear.y * sin(yaw)); //body frame assuming zero pitch roll
+        drone->vel_cmd.y = (msg->twist.linear.x * sin(yaw)) + (msg->twist.linear.y * cos(yaw)); //body frame
+        drone->vel_cmd.z = msg->twist.linear.z;
+        drone->vel_cmd.drivetrain = msr::airlib::DrivetrainType::MaxDegreeOfFreedom;
+        drone->vel_cmd.yaw_mode.is_rate = true;
+        // airsim uses degrees
+        drone->vel_cmd.yaw_mode.yaw_or_rate = math_common::rad2deg(msg->twist.angular.z);
+        drone->has_vel_cmd = true;
+        get_multirotor_client()->moveByVelocityAsync(drone->vel_cmd.x,
                                                              drone->vel_cmd.y,
                                                              drone->vel_cmd.z,
                                                              vel_cmd_duration_,
                                                              msr::airlib::DrivetrainType::MaxDegreeOfFreedom,
                                                              drone->vel_cmd.yaw_mode,
                                                              drone->vehicle_name);
+        last_cmd_time = t;
+    }
 }
 
 void AirsimROSWrapper::angle_rate_throttle_frame_cb(const airsim_ros_pkgs::AngleRateThrottle::ConstPtr& msg, const std::string& vehicle_name)
 {
-    std::lock_guard<std::mutex> guard(drone_control_mutex_);
-    auto drone = static_cast<MultiRotorROS*>(vehicle_name_ptr_map_[vehicle_name].get());
-    
-    drone->angle_rate_throttle_cmd.rollRate = msg->rollRate;
-    drone->angle_rate_throttle_cmd.pitchRate = msg->pitchRate;
-    drone->angle_rate_throttle_cmd.yawRate = msg->yawRate;
-    drone->angle_rate_throttle_cmd.throttle = msg->throttle;
-    drone->has_angle_rate_throttle_cmd = true;
-    get_multirotor_client()->moveByAngleRatesThrottleAsync(drone->angle_rate_throttle_cmd.rollRate,
-                                                                    drone->angle_rate_throttle_cmd.pitchRate,
-                                                                    drone->angle_rate_throttle_cmd.yawRate,
-                                                                    drone->angle_rate_throttle_cmd.throttle,
-                                                                    vel_cmd_duration_,
-                                                                    drone->vehicle_name);
+    long long t  = std::chrono::system_clock().now().time_since_epoch().count();
+    if(t - last_cmd_time > 10000000)
+    {
+
+        std::lock_guard<std::mutex> guard(drone_control_mutex_);
+        auto drone = static_cast<MultiRotorROS*>(vehicle_name_ptr_map_[vehicle_name].get());
+        
+        drone->angle_rate_throttle_cmd.rollRate = msg->rollRate;
+        drone->angle_rate_throttle_cmd.pitchRate = msg->pitchRate;
+        drone->angle_rate_throttle_cmd.yawRate = msg->yawRate;
+        drone->angle_rate_throttle_cmd.throttle = msg->throttle;
+        drone->has_angle_rate_throttle_cmd = true;
+        get_multirotor_client()->moveByAngleRatesThrottleAsync(drone->angle_rate_throttle_cmd.rollRate,
+                                                                        drone->angle_rate_throttle_cmd.pitchRate,
+                                                                        drone->angle_rate_throttle_cmd.yawRate,
+                                                                        drone->angle_rate_throttle_cmd.throttle,
+                                                                        vel_cmd_duration_,
+                                                                        drone->vehicle_name);
+        last_cmd_time = t;
+    }
 }
 
 
