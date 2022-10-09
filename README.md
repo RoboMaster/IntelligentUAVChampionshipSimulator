@@ -1,5 +1,8 @@
 # __自主无人机竞速模拟器使用说明__  
 1. ## 更新说明
+### v1.2.0 
+   1. 模拟器版本更新 -> v1.2.0; 静态障碍环扰动范围正负1米。
+
 ### v1.1.1 
    1. 模拟器版本更新 -> v1.1.1; 赛道一， 赛道二添加了视觉标定板， 具体参数参考模拟器根目录README文件; 赛道二动态圈发生碰撞时会停止，防止卡主无人机；
    2. roswrapper限制了控制命令的发布频率为100hz；
@@ -69,7 +72,7 @@
 
    5. ## WIN 端下载并启动模拟器
     >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_WIN_V1_1_1.zip`
+    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_WIN_V1_2_0.zip`
     ---
     >解压后进入文件夹中，参考simulator_WIN.md 启动模拟器  
     ![pic](doc/2022-08-18%2015-26-03%20的屏幕截图.png)
@@ -120,7 +123,7 @@
 
    5. ## B LINUX 端下载并启动模拟器
     >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX_V1_1_1.zip`
+    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX_V1_2_0.zip`
     ---
     >解压后进入文件夹中，参考simulator_LINUX.md 启动模拟器  
     ![pic](doc/2022-08-18%2015-35-08%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
@@ -171,7 +174,7 @@
 
    5. ## 下载模拟器
     >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX_V1_1_1.zip`
+    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX_V1_2_0.zip`
     ---
     >解压后进入文件夹中，参考simulator_LINUX.md 启动模拟器  
     ![pic](doc/2022-08-18%2015-35-08%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
