@@ -1,192 +1,11 @@
 # __自主无人机竞速模拟器使用说明__  
-1. ## 更新说明
-### v1.1.1 
-   1. 模拟器版本更新 -> v1.1.1; 赛道一， 赛道二添加了视觉标定板， 具体参数参考模拟器根目录README文件; 赛道二动态圈发生碰撞时会停止，防止卡主无人机；
-   2. roswrapper限制了控制命令的发布频率为100hz；
-
-### v1.1.0-未经稳定性测试，非正式版: 
-   1. 修复imu帧率下降问题；
-   2. 修复图像时间戳延迟问题；
-   ---
-### 0830: 
-   1. 相机配置文件中的x, y, z 数值 乘以二， 纠正因提及缩放导致的误差；
-   2. FOV由100度改为90度；
-   3. roswrapper移除规则外的传感器（气压计，gps，磁力计等），仅保留imu；保留真值作为调试用；移除tf；
-   ---
-### 0818: 
-   1. RGBD以及双目的同步问题已解决；
-   2. 帧率优化，简化了自主飞行赛项的场景；
-   3. 削弱了图像噪声；
-   4. 新增 角速度油门 控制接口；
-   5. 自主飞行中的障碍环12会移动；
-   6. 增加了障碍环生成位置的随机值参数，位于 simulator_LINUX/contest2/Content/seed.txt 中，默认为1。正式比赛中该值会随机变动，使得障碍环位置改动；
-   7. RGBD相机、双目相机、FPV的安装位置方向由 0.25 变更为 0.26， 解决相机拍到机架的问题；
-   8. 子窗口中的深度图像数值归一化为 0-255 之间，使得其可视化。
-   9. 深度数据限制为 10m ,超出部分为 0；同时，深度数据由 透视深度 改为 平面深度；
-   10. 模拟器集合了三个赛项，不需要再分别下载，单个赛项的分支将不再维护；
-   11. 提供了多机分布方案；
-   12. LINUX + WIN 双机开发模式，模拟器运行于WIN,ros运行于Linux(推荐采用此模式)
-   13. LINUX + LINUX 双机开发模式， 模拟器运行于A Linux,ros运行于B Linux
-   14. LINUX 单机开发模式(不推荐)  
-
-2. ## LINUX + WIN 双机开发模式
-    ### 简介
-    WIN 端运行模拟器能提供最佳运行性能，双击模式分离后免除了ros 端程序对模拟器的影响，使得开发更便利。  
-    **使用前请用 Linux 端 clone此仓库。**
-    ### 使用说明
-   1. ## LINUX 端安装 ROS noetic
-    >设置软件库   
-    `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`  
-    ----    
-    >安装 curl  
-    `sudo apt install curl `  
-    ----
-    >设置KEY  
-    `curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -`   
-    ----
-    >更新软件列表    
-    `sudo apt update`
-    ----
-    >安装完整ROS包  
-    `sudo apt install ros-noetic-desktop-full`
-
-   2. ## 安装 catkin 管理工具
-    >`sudo apt install python3-catkin-tools`
-       
-   3. ## 进入roswrapper资源目录
-    >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper/ros` 
-   
-   4. ## 构建roswrapper
-    >`sudo cp -rf /usr/include/eigen3/Eigen /usr/include/Eigen -R`
-    ----
-    >`sudo apt install ros-noetic-mavros ros-noetic-mavros-extras`
-    ----
-    >`sudo apt install ros-noetic-tf2-sensor-msgs`
-    ----
-    >`source /opt/ros/noetic/setup.bash `
-    ----
-    >`catkin build`
-
-   5. ## WIN 端下载并启动模拟器
-    >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_WIN_V1_1_1.zip`
-    ---
-    >解压后进入文件夹中，参考simulator_WIN.md 启动模拟器  
-    ![pic](doc/2022-08-18%2015-26-03%20的屏幕截图.png)
-
-   6. ## LINUX 端启动 roswrapper
-    >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper` 
-    ---
-    使用脚本启动roswrapper，参数为你的模拟器ip地址
-    >`./simulator.sh 127.0.0.1`
-    ---
-
-3. ## LINUX + LINUX 双机开发模式
-    ### 简介
-    双机模式分离后免除了ros 端程序对模拟器的影响，使得开发更便利。但是 Linux端运行模拟器对帧率有较大的影响。使用 Linux 端 clone此仓库。
-    ### 使用说明
-   1. ## A LINUX 端安装ROS noetic
-    >设置软件库   
-    `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`  
-    ----    
-    >安装 curl  
-    `sudo apt install curl `  
-    ----
-    >设置KEY  
-    `curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -`   
-    ----
-    >更新软件列表    
-    `sudo apt update`
-    ----
-    >安装完整ROS包  
-    `sudo apt install ros-noetic-desktop-full`
-
-   2. ## A LINUX 端安装 catkin 管理工具
-    >`sudo apt install python3-catkin-tools`
-       
-   3. ## A LINUX 端进入roswrapper资源目录
-    >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper/ros` 
-   
-   4. ## A LINUX 端构建roswrapper
-    >`sudo cp -rf /usr/include/eigen3/Eigen /usr/include/Eigen -R`
-    ----
-    >`sudo apt install ros-noetic-mavros ros-noetic-mavros-extras`
-    ----
-    >`sudo apt install ros-noetic-tf2-sensor-msgs`
-    ----
-    >`source /opt/ros/noetic/setup.bash `
-    ----
-    >`catkin build`
-
-   5. ## B LINUX 端下载并启动模拟器
-    >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX_V1_1_1.zip`
-    ---
-    >解压后进入文件夹中，参考simulator_LINUX.md 启动模拟器  
-    ![pic](doc/2022-08-18%2015-35-08%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
-
-   6. ## A LINUX 端启动 roswrapper
-    >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper` 
-    ---
-    使用脚本启动roswrapper，参数为你的模拟器ip地址
-    >`./simulator.sh 127.0.0.1`
-    ---
-
-4. ## LINUX 单机开发模式
-    ### 简介
-    仅使用一台linux机器开发，帧率受到较大影响
-    ### 使用说明
-   1. ## 安装 ROS noetic
-    >设置软件库   
-    `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`  
-    ----    
-    >安装 curl  
-    `sudo apt install curl `  
-    ----
-    >设置KEY  
-    `curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -`   
-    ----
-    >更新软件列表    
-    `sudo apt update`
-    ----
-    >安装完整ROS包  
-    `sudo apt install ros-noetic-desktop-full`
-
-   2. ## 安装 catkin 管理工具
-    >`sudo apt install python3-catkin-tools`
-       
-   3. ## 进入roswrapper资源目录
-    >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper/ros` 
-   
-   4. ## 构建roswrapper
-    >`sudo cp -rf /usr/include/eigen3/Eigen /usr/include/Eigen -R`
-    ----
-    >`sudo apt install ros-noetic-mavros ros-noetic-mavros-extras`
-    ----
-    >`sudo apt install ros-noetic-tf2-sensor-msgs`
-    ----
-    >`source /opt/ros/noetic/setup.bash `
-    ----
-    >`catkin build`
-
-   5. ## 下载模拟器
-    >在浏览器中输入此网址即可开始下载:    
-    `https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/simulator/simulator_LINUX_V1_1_1.zip`
-    ---
-    >解压后进入文件夹中，参考simulator_LINUX.md 启动模拟器  
-    ![pic](doc/2022-08-18%2015-35-08%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
-
-   6. ## 启动 roswrapper
-    >`cd /path/to/IntelligentUAVChampionshipSimulator/roswrapper` 
-    ---
-    使用脚本启动roswrapper，参数为你的模拟器ip地址
-    >`./simulator.sh 127.0.0.1`
-    ---
-
-## Q&A
-> 启动模拟器和roswrapper后，roswrapper显示无法连接自己的服务器,需要安装docker服务来新建相关子网。
-![图片](doc/2022-08-05%2015-13-10%20的屏幕截图.png)   
-安装docker:  
+## 简介
+    RMUA2023赛季综合赛模拟器
+## 使用说明
+1. ## 安装Nvidia-Docker  
+>确保已安装 Nvidia 驱动  
+----
+>安装docker
 >+ `sudo apt-get install ca-certificates gnupg lsb-release`
 >+ `sudo mkdir -p /etc/apt/keyrings`
 >+ `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`
@@ -194,4 +13,78 @@
 >+ `sudo apt-get update`
 >+ `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin`
 ----
-> 必须先启动模拟器后再开启roswrapper,否则会出现topic无数据的问题；关闭时要先退出roswrapper在关闭模拟器，否则模拟器会卡死。
+>安装nvidia-container-toolkit
+>+ `distribution=$(. /etc/os-release;echo $ID$VERSION_ID)`
+>+ `curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -`
+>+ `curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list`
+>+ `sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit`
+>+ `sudo systemctl restart docker`
+---
+>设置用户组，消除 *sudo* 限制  
+>+ `sudo groupadd docker`  
+>+ `sudo gpasswd -a $USER docker`  
+>+ 注销账户并重新登录使新的用户组生效
+>+ sudo service docker restart
+2. ## 安装ROS-Noetic 
+>+ `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`   
+>+ `sudo apt install curl `  
+>+ `curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -`   
+>+ `sudo apt update`
+>+ `sudo apt install ros-noetic-desktop-full`
+>+ `sudo apt install python3-catkin-tools`
+3. ## 构建Docker镜像
+>`cd /path/to/IntelligentUAVChampionshipSimulator`  
+>`docker build -t simulator .`
+4. ## 启动模拟器
+>`cd /path/to/IntelligentUAVChampionshipSimulator`   
+>使用功能脚本启动模拟器，第一个参数决定是否使用离屏渲染模式（1:使用/0:不使用）,第二个参数指定模拟器的随机种子    
+`./run_docker_simulator.sh 0 123`   
+>使用ROS获得当前模拟器的输出数据，若得到图示数据说明模拟器运行正常  
+`source /opt/ros/noetic/setup.bash`  
+`rostopic list`  
+![pic](./docs/topic.png) 
+
+## ros数据交互
+![pic](./docs/5.png)   
+>用于获取数据的可订阅的主题  
+>+ 下视相机   
+`/airsim_node/drone_1/bottom_center/Scene`  
+>+ 双目左rgb图  
+`/airsim_node/drone_1/front_left/Scene`
+>+ 双目右rgb图    
+`/airsim_node/drone_1/front_right/Scene`
+>+ imu数据  
+`/airsim_node/drone_1/imu/imu`
+>+ 无人机状态真值  
+`/airsim_node/drone_1/debug/pose_gt`
+>+ gps数据  
+`/airsim_node/drone_1/pose`
+>+ 障碍圈位姿真值  
+`/airsim_node/drone_1/debug/circle_poses_gt`  
+>+ 障碍圈参考位姿    
+`/airsim_node/drone_1/circle_poses`  
+>+ 赛道中生成的树的真实位置  
+`/airsim_node/drone_1/debug/tree_poses_gt`
+>+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
+`/airsim_node/drone_1/rotor_pwm`  
+----
+>用于发送指令的主题
+>+ 姿态控制  
+`/airsim_node/drone_1/pose_cmd_body_frame` 
+>+ 速度控制   
+`/airsim_node/drone_1/vel_cmd_body_frame`
+>+ 角速度推力控制  
+`/airsim_node/drone_1/angle_rate_throttle_frame`
+----
+>可用服务   
+>+ 起飞   
+`/airsim_node/drone_1/takeoff`   
+>+ 降落   
+`/airsim_node/drone_1/land`   
+>+ 重置   
+`/airsim_node/reset` 
+### 注意:   
+服务器仅开放 _下视相机_, _双目左rgb图_, _双目右rgb图_, _gps数据_, _障碍圈参考位姿_, _imu数据_， 规则手册中未提及的话题(_无人机状态真值_, _障碍圈位姿真值_, _赛道中生成的树的真实位置_, _电机输入PWM信号_)仅供调试程序使用。
+
+
+

@@ -1,5 +1,0 @@
-[requires]
-cmake_installer/1.0@conan/stable
-
-[generators]
-virtualenv
