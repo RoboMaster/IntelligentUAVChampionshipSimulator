@@ -34,14 +34,29 @@
 >+ `sudo apt install python3-catkin-tools`
 
 3. ## 使用模拟器
+### 本机启动
+>+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
 >+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_student_230905_r3_shipping.zip`  
->+ `unizp uasim_student_230905_r3_shipping.zip`  
+>+ `unzip uasim_student_230905_r3_shipping.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
->+ 渲染模式  `./run_simulator.sh` ; 后台模式  `./run_simulator.sh`    
->+ 使用rosh查看主题 `source /opt/ros/noetic/setup.bash`    
+>+ 渲染模式  `./run_simulator.sh`  
+>+ 后台模式  `./run_simulator_offscreen.sh`     
+注意：脚本中的 _-seed_ 参数为模拟器的随机种子，可根据需要修改   
+![pic](./docs/渲染模式.png) 
+>+ 使用ros查看主题  
+>+ `source /opt/ros/noetic/setup.bash`    
 >+ `rostopic list`    
 ![pic](./docs/topic.png)   
+
+### Docker启动
+>+ `cd /path/to/IntelligentUAVChampionshipSimulator` 
+>+ `docker build -t simulator .`  
+>+ `./run_docker_simulator.sh 123`  
+注意：Docker仅支持后台模式运行,启动脚本后第一个参数 _123_ 是模拟器的随机种子，可根据需要修改    
+>+ 使用ros查看主题 `source /opt/ros/noetic/setup.bash`    
+>+ `rostopic list`    
+![pic](./docs/topic.png)  
 
 ## ros数据交互
 ![pic](./docs/5.png)   
