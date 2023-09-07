@@ -53,8 +53,9 @@
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator` 
 >+ `docker build -t simulator .`  
 >+ `./run_docker_simulator.sh 123`  
-注意：Docker仅支持后台模式运行,启动脚本后第一个参数 _123_ 是模拟器的随机种子，可根据需要修改    
->+ 使用ros查看主题 `source /opt/ros/noetic/setup.bash`    
+注意：Docker仅支持后台模式运行,启动脚本后第一个参数 _123_ 是模拟器的随机种子，可根据需要修改     
+>+ 使用ros查看主题    
+>+ `source /opt/ros/noetic/setup.bash`     
 >+ `rostopic list`    
 ![pic](./docs/topic.png)  
 
