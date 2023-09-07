@@ -38,7 +38,7 @@
 >+ `unizp uasim_student_230905_r3_shipping.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
->+ 渲染模式  `./run_simulator.sh` ; 后台模式  `./run_simulator.sh`    
+>+ 渲染模式  `./run_simulator.sh` ; 后台模式  `./run_simulator_offscreen.sh`    
 >+ 使用rosh查看主题 `source /opt/ros/noetic/setup.bash`    
 >+ `rostopic list`    
 ![pic](./docs/topic.png)   
