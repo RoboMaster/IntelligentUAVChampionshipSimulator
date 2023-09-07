@@ -32,17 +32,16 @@
 >+ `sudo apt update`
 >+ `sudo apt install ros-noetic-desktop-full`
 >+ `sudo apt install python3-catkin-tools`
-3. ## 构建Docker镜像
->`cd /path/to/IntelligentUAVChampionshipSimulator`  
->`docker build -t simulator .`
-4. ## 启动模拟器
->`cd /path/to/IntelligentUAVChampionshipSimulator`   
->使用功能脚本启动模拟器，第一个参数决定是否使用离屏渲染模式（1:使用/0:不使用）,第二个参数指定模拟器的随机种子    
-`./run_docker_simulator.sh 0 123`   
->使用ROS获得当前模拟器的输出数据，若得到图示数据说明模拟器运行正常  
-`source /opt/ros/noetic/setup.bash`  
-`rostopic list`  
-![pic](./docs/topic.png) 
+
+3. ## 使用模拟器
+>+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_student_230905_r3_shipping.zip`  
+>+ `unizp uasim_student_230905_r3_shipping.zip`  
+>+ `mkdir ~/Documents/AirSim`  
+>+ `cp settings.json ~/Documents/AirSim`   
+>+ 渲染模式  `./run_simulator.sh` ; 后台模式  `./run_simulator.sh`    
+>+ 使用rosh查看主题 `source /opt/ros/noetic/setup.bash`    
+>+ `rostopic list`    
+![pic](./docs/topic.png)   
 
 ## ros数据交互
 ![pic](./docs/5.png)   
