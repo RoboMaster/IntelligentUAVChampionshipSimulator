@@ -1,6 +1,18 @@
+# release note:
+## 20230908: 更新README
+
+
 # __自主无人机竞速模拟器使用说明__  
 ## 简介
     RMUA2023赛季综合赛模拟器
+
+## 官方测试环境
+> ros-noetic  
+> ubuntu20.04  
+> NVIDIA RTX3060TI gpu   
+> INTEL I7 12th cpu  
+### 注意：若使用神经网络，建议使用双显卡以保证模拟器性能
+
 ## 使用说明
 1. ## 安装Nvidia-Docker  
 >确保已安装 Nvidia 驱动  
@@ -100,6 +112,13 @@
 `/airsim_node/reset` 
 ### 注意:   
 服务器仅开放 _下视相机_, _双目左rgb图_, _双目右rgb图_, _gps数据_, _障碍圈参考位姿_, _imu数据_， 规则手册中未提及的话题(_无人机状态真值_, _障碍圈位姿真值_, _赛道中生成的树的真实位置_, _电机输入PWM信号_)仅供调试程序使用。
+
+
+## Q&A
+
+### 找不到数据类型
+> 使用rqt_topic时发现一些数据类型缺失，需要source官方开发案例教程中basic_dev中的airsim_ros包。具体请参考: https://github.com/RoboMaster/IntelligentUAVChampionshipBase
+![pic](./docs/no_data_type.png)  
 
 
 
