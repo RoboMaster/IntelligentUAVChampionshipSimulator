@@ -20,12 +20,6 @@
     ]
   },
   "SubWindows": [
-    {
-      "WindowID": 0,
-      "CameraName": "back_center",
-      "ImageType": 0,
-      "Visible": true
-    }
   ],
   "CameraDefaults": {
     "CaptureSettings": [

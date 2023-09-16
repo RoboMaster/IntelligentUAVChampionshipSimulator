@@ -1,5 +1,6 @@
 # release note:
-## 20230908: 更新README
+## 20230908: 更新README  
+## 20230916: 更新README，去除settings.json中小窗口图像  
 
 
 # __自主无人机竞速模拟器使用说明__  
@@ -119,6 +120,14 @@
 ### 找不到数据类型
 > 使用rqt_topic时发现一些数据类型缺失，需要source官方开发案例教程中basic_dev中的airsim_ros包。具体请参考: https://github.com/RoboMaster/IntelligentUAVChampionshipBase
 ![pic](./docs/no_data_type.png)  
+
+
+### 帧率波动
+> 当帧率波动严重时，可以更换更高性能的显卡。使用3090显卡进行测试，连续运行1个小时，模拟器帧率波动维持在0.5%以下。    
+也可以关闭不需要的相机降低模拟器性能需求，提升帧率稳定性。
+对于本机启动，仅需要把 _~/Documents/AirSim/settings.json_ 中相应相机配置删除即可关闭该相机。  
+对于docker启动，需要把 _/path/to/IntelligentUAVChampionshipSimulator_ 中的 _settings.json_ 中相应相机配置删除后重新构建镜像即可。   
+![pic](./docs/关闭相机.png)   
 
 
 
