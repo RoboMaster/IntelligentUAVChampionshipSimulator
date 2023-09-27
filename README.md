@@ -1,6 +1,8 @@
 # release note:
+## 20230926: 修改自定义数据类型，为所有的 _airsim_ros_ 下的自定义数据类型添加了时间戳
+## 20230916: 更新README，去除settings.json中小窗口图像 
 ## 20230908: 更新README  
-## 20230916: 更新README，去除settings.json中小窗口图像  
+ 
 
 
 # __自主无人机竞速模拟器使用说明__  
@@ -49,8 +51,8 @@
 3. ## 使用模拟器
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_student_230905_r3_shipping.zip`  
->+ `unzip uasim_student_230905_r3_shipping.zip`  
+>+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2301_student_230926_r1_shipping.zip`  
+>+ `unzip uasim_2301_student_230926_r1_shipping.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
 >+ 渲染模式  `./run_simulator.sh`  
@@ -128,6 +130,9 @@
 对于本机启动，仅需要把 _~/Documents/AirSim/settings.json_ 中相应相机配置删除即可关闭该相机。  
 对于docker启动，需要把 _/path/to/IntelligentUAVChampionshipSimulator_ 中的 _settings.json_ 中相应相机配置删除后重新构建镜像即可。   
 ![pic](./docs/关闭相机.png)   
+
+### 时钟同步
+> 模拟器时钟与本地时钟存在一定差异，建议使用 IMU 主题传出的时间戳作为全局时钟进行程序设计。
 
 
 

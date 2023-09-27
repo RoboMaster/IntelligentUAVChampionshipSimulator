@@ -17,15 +17,16 @@ ENV LC_ALL C.UTF-8
 ENV ROS_DISTRO noetic
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-ros-core=1.5.0-1* \
-    unzip
+    unzip \
+    ffmpeg
 RUN apt-get install -y --no-install-recommends iproute2 iputils-ping\
     && rm -rf /var/lib/apt/lists/* 
 
 ADD start.bash /usr/local/
 RUN chmod +x /usr/local/start.bash
 # ADD Build /usr/local/
-ADD https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_student_230905_r3_shipping.zip /usr/local/
-RUN cd /usr/local/ && unzip -o uasim_student_230905_r3_shipping.zip && mv Build/LinuxNoEditor /usr/local/
+ADD https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2301_student_230926_r1_shipping.zip /usr/local/
+RUN cd /usr/local/ && unzip -o uasim_2301_student_230926_r1_shipping.zip && mv Build/LinuxNoEditor /usr/local/
 ADD settings.json /usr/local/LinuxNoEditor/RMUA/Binaries/Linux/
 
 RUN chmod +x /usr/local/LinuxNoEditor/RMUA/Binaries/Linux/RMUA-Linux-Shipping
