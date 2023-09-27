@@ -1,13 +1,11 @@
 # release note:
-## 20230926: 修改自定义数据类型，为所有的 _airsim_ros_ 下的自定义数据类型添加了时间戳
-## 20230916: 更新README，去除settings.json中小窗口图像 
-## 20230908: 更新README  
+## 20230926: 规划控制专项模拟器
  
 
 
 # __自主无人机竞速模拟器使用说明__  
 ## 简介
-    RMUA2023赛季综合赛模拟器
+    RMUA2023赛季规划控制专项模拟器
 
 ## 官方测试环境
 > ros-noetic  
@@ -51,8 +49,8 @@
 3. ## 使用模拟器
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2301_student_230926_r1_shipping.zip`  
->+ `unzip uasim_2301_student_230926_r1_shipping.zip`  
+>+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2302_student_230926_r1_shipping.zip`  
+>+ `unzip uasim_2302_student_230926_r1_shipping.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
 >+ 渲染模式  `./run_simulator.sh`  
@@ -62,49 +60,39 @@
 >+ 使用ros查看主题  
 >+ `source /opt/ros/noetic/setup.bash`    
 >+ `rostopic list`    
-![pic](./docs/topic.png)   
+![pic](./docs/topic2.png)   
 
 ### Docker启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator` 
->+ `docker build -t simulator .`  
+>+ `docker build -t simulator02 .`  
 >+ `./run_docker_simulator.sh 123`  
 注意：Docker仅支持后台模式运行,启动脚本后第一个参数 _123_ 是模拟器的随机种子，可根据需要修改     
 >+ 使用ros查看主题    
 >+ `source /opt/ros/noetic/setup.bash`     
 >+ `rostopic list`    
-![pic](./docs/topic.png)  
+![pic](./docs/topic2.png)  
 
 ## ros数据交互
 ![pic](./docs/5.png)   
 >用于获取数据的可订阅的主题  
->+ 下视相机   
-`/airsim_node/drone_1/bottom_center/Scene`  
->+ 双目左rgb图  
-`/airsim_node/drone_1/front_left/Scene`
->+ 双目右rgb图    
-`/airsim_node/drone_1/front_right/Scene`
+>+ 前视相机   
+`/airsim_node/drone_1/front_center/Scene`  
+>+ 前视深度相机  
+`/airsim_node/drone_1/front_left/DepthPlanar`
 >+ imu数据  
 `/airsim_node/drone_1/imu/imu`
 >+ 无人机状态真值  
-`/airsim_node/drone_1/debug/pose_gt`
->+ gps数据  
-`/airsim_node/drone_1/pose`
+`/airsim_node/drone_1/pose_gt`
 >+ 障碍圈位姿真值  
-`/airsim_node/drone_1/debug/circle_poses_gt`  
->+ 障碍圈参考位姿    
-`/airsim_node/drone_1/circle_poses`  
->+ 赛道中生成的树的真实位置  
-`/airsim_node/drone_1/debug/tree_poses_gt`
+`/airsim_node/drone_1/circle_poses_gt`  
 >+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/rotor_pwm`  
 ----
 >用于发送指令的主题
->+ 姿态控制  
-`/airsim_node/drone_1/pose_cmd_body_frame` 
->+ 速度控制   
-`/airsim_node/drone_1/vel_cmd_body_frame`
 >+ 角速度推力控制  
 `/airsim_node/drone_1/angle_rate_throttle_frame`
+>+ PWM控制  
+`/airsim_node/drone_1/rotor_pwm_cmd`
 ----
 >可用服务   
 >+ 起飞   
@@ -113,8 +101,6 @@
 `/airsim_node/drone_1/land`   
 >+ 重置   
 `/airsim_node/reset` 
-### 注意:   
-服务器仅开放 _下视相机_, _双目左rgb图_, _双目右rgb图_, _gps数据_, _障碍圈参考位姿_, _imu数据_， 规则手册中未提及的话题(_无人机状态真值_, _障碍圈位姿真值_, _赛道中生成的树的真实位置_, _电机输入PWM信号_)仅供调试程序使用。
 
 
 ## Q&A
