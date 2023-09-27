@@ -1,0 +1,26 @@
+{
+    "Data":{
+        "FolderPath":"/data/",
+        "BlockSize":50000000,
+        "SendSize":81840000,
+        "SendFreq":0.1,
+        "PacketSize":65000,
+        "GroundTruePath":"/Ground_true/gt.txt"
+    },
+    "UDPServer":
+    {
+        "IP":"127.0.0.1",
+        "Port":60001
+    },
+    "StartSignal":
+    {
+        "Message":"gameStart",
+        "Length":9
+    },
+    "Command":
+    {
+        "SaveDataPerSecond":true
+    },
+    "NotValidFailFrames":120,
+    "InitFrames":30
+}
