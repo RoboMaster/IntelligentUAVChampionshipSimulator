@@ -1,4 +1,5 @@
 # release note:
+## 20231007: 修复随机数参数不生效问题，将 _-seed=123_ 改为 _seed 123_
 ## 20230926: 规划控制专项模拟器
  
 
@@ -55,7 +56,7 @@
 >+ `cp settings.json ~/Documents/AirSim`   
 >+ 渲染模式  `./run_simulator.sh`  
 >+ 后台模式  `./run_simulator_offscreen.sh`     
-注意：脚本中的 _-seed_ 参数为模拟器的随机种子，可根据需要修改   
+注意：脚本中的 _seed_ 参数为模拟器的随机种子，可根据需要修改   
 ![pic](./docs/渲染模式.png) 
 >+ 使用ros查看主题  
 >+ `source /opt/ros/noetic/setup.bash`    
