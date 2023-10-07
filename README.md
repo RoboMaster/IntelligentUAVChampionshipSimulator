@@ -1,4 +1,5 @@
 # release note:
+## 20231007: 修复启动脚本随机数输入参数问题，将 _-seed=123_ 改为 _seed 123_
 ## 20230926: 修改自定义数据类型，为所有的 _airsim_ros_ 下的自定义数据类型添加了时间戳
 ## 20230916: 更新README，去除settings.json中小窗口图像 
 ## 20230908: 更新README  
@@ -57,7 +58,7 @@
 >+ `cp settings.json ~/Documents/AirSim`   
 >+ 渲染模式  `./run_simulator.sh`  
 >+ 后台模式  `./run_simulator_offscreen.sh`     
-注意：脚本中的 _-seed_ 参数为模拟器的随机种子，可根据需要修改   
+注意：脚本中的 _seed_ 参数为模拟器的随机种子，可根据需要修改   
 ![pic](./docs/渲染模式.png) 
 >+ 使用ros查看主题  
 >+ `source /opt/ros/noetic/setup.bash`    
