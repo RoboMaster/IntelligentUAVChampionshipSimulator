@@ -1,4 +1,5 @@
 # release note:
+## 20231013: 修正了障碍圈yaw值正负号相反的问题；修复了强光照射下，障碍圈显白色的问题；
 ## 20231007: 修复启动脚本随机数输入参数问题，将 _-seed=123_ 改为 _seed 123_
 ## 20230926: 修改自定义数据类型，为所有的 _airsim_ros_ 下的自定义数据类型添加了时间戳
 ## 20230916: 更新README，去除settings.json中小窗口图像 
@@ -13,7 +14,7 @@
 ## 官方测试环境
 > ros-noetic  
 > ubuntu20.04  
-> NVIDIA RTX3060TI gpu   
+> NVIDIA RTX3060TI gpu (驱动版本：470.182.03)   
 > INTEL I7 12th cpu  
 ### 注意：若使用神经网络，建议使用双显卡以保证模拟器性能
 
@@ -52,8 +53,8 @@
 3. ## 使用模拟器
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2301_student_230926_r1_shipping.zip`  
->+ `unzip uasim_2301_student_230926_r1_shipping.zip`  
+>+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/1012_r1.zip`  
+>+ `unzip 1012_r1.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
 >+ 渲染模式  `./run_simulator.sh`  
