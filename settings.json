@@ -10,14 +10,7 @@
   "Recording": {
     "RecordOnMove": false,
     "RecordInterval": 0.05,
-    "Cameras": [
-      {
-        "CameraID": 0,
-        "ImageType": 0,
-        "PixelsAsFloat": false,
-        "Compress": true
-      }
-    ]
+    "Cameras": []
   },
   "SubWindows": [
   ],

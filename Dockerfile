@@ -25,8 +25,8 @@ RUN apt-get install -y --no-install-recommends iproute2 iputils-ping\
 ADD start.bash /usr/local/
 RUN chmod +x /usr/local/start.bash
 # ADD Build /usr/local/
-ADD https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/1012_r1.zip /usr/local/
-RUN cd /usr/local/ && unzip -o 1012_r1.zip && mv Build/LinuxNoEditor /usr/local/
+ADD https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/1016_r1.zip /usr/local/
+RUN cd /usr/local/ && unzip -o 1016_r1.zip && mv Build/LinuxNoEditor /usr/local/
 ADD settings.json /usr/local/LinuxNoEditor/RMUA/Binaries/Linux/
 
 RUN chmod +x /usr/local/LinuxNoEditor/RMUA/Binaries/Linux/RMUA-Linux-Shipping
