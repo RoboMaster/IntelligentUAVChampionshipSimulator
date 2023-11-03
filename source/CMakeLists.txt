@@ -9,7 +9,7 @@ find_package(Threads REQUIRED)
 # 设置包含路径
 include_directories(
     ${ROOT_DIR}/include
-    ${ROOT_DIR}/thirdParties/websocketpp
+    # ${ROOT_DIR}/thirdParties/websocketpp
     ${ROOT_DIR}/thirdParties/jsoncpp/include
     ${Boost_INCLUDE_DIR}
     ${Threads_INCLUDE_DIR}

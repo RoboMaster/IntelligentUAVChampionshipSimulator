@@ -336,7 +336,7 @@ void GNSSSimulator::start()
                         {
                             if(!m_output_aligned)
                             {
-                                if(m_decodeddata.timestamp > m_ground_true[m_second_count*5][0] && m_decodeddata.timestamp < m_ground_true[(m_second_count+1)*5+1500][0])
+                                if(m_decodeddata.timestamp >= m_ground_true[m_second_count*5][0] && m_decodeddata.timestamp <= m_ground_true[(m_second_count+1)*5+1500][0])
                                 {
                                     valid = true;
                                     m_output_aligned = true;

@@ -1,4 +1,5 @@
 # release note:
+## 20231103: 增加中频数据格式说明
 ## 20230926: GNSS专项赛模拟器
  
 
@@ -32,6 +33,16 @@
 >+ `wget -c https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/data_3_20mins.zip`  
 >+ `unzip data_3_20mins.zip -d path_to_data_store_dir`    
 数据大小总计98G, 解压后为1965个50M大小的数据包，模拟器会依次读取这些数据包并发送给客户端    
+>+ 数据集描述：    
+&lt;Signal Recorded>  1, BEIB1-GLOL1_RF1, Bandwidth 80 MHz, Freq 1583.604 MHz, Bits 4    
+&lt;Descriptions> IonosphereData_3  
+&lt;Location> Unknown  
+&lt;External Trigger> False  
+&lt;Master/Slave> OFF   
+&lt;Input Gain> RF1 Auto. RF2 Auto.  
+数据说明参考 /docs/DGP01467AAA Issue 3-00 GSS6450 Data Format.pdf  
+![pic](./docs/dataformat.jpeg)
+
 
 3. ## 使用模拟器
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator` 

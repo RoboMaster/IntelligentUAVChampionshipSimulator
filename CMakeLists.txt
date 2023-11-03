@@ -38,7 +38,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/Lib/Release)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/lib/Release)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/Bin/Release)
 
-add_subdirectory(thirdParties/websocketpp)
+# add_subdirectory(thirdParties/websocketpp)
 add_subdirectory(thirdParties/jsoncpp)
 add_subdirectory(thirdParties/glog)
 add_subdirectory(source)
