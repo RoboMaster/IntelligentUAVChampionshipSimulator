@@ -1,4 +1,5 @@
 # release note:
+## 20231103: 同步综合赛相关改动点
 ## 20231007: 修复随机数参数不生效问题，将 _-seed=123_ 改为 _seed 123_
 ## 20230926: 规划控制专项模拟器
  
@@ -50,8 +51,8 @@
 3. ## 使用模拟器
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2302_student_230926_r1_shipping.zip`  
->+ `unzip uasim_2302_student_230926_r1_shipping.zip`  
+>+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2302_student_231101_r1_shipping.zip`  
+>+ `unzip uasim_2302_student_231101_r1_shipping.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
 >+ 渲染模式  `./run_simulator.sh`  

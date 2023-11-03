@@ -25,8 +25,8 @@ RUN apt-get install -y --no-install-recommends iproute2 iputils-ping\
 ADD start.bash /usr/local/
 RUN chmod +x /usr/local/start.bash
 # ADD Build /usr/local/
-ADD https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2302_student_230926_r1_shipping.zip /usr/local/
-RUN cd /usr/local/ && unzip -o uasim_2302_student_230926_r1_shipping.zip && mv Build/LinuxNoEditor /usr/local/
+ADD https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2302_student_231101_r1_shipping.zip /usr/local/
+RUN cd /usr/local/ && unzip -o uasim_2302_student_231101_r1_shipping.zip && mv Build/LinuxNoEditor /usr/local/
 ADD settings.json /usr/local/LinuxNoEditor/RMUA/Binaries/Linux/
 
 RUN chmod +x /usr/local/LinuxNoEditor/RMUA/Binaries/Linux/RMUA-Linux-Shipping
