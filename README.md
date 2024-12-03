@@ -1,13 +1,6 @@
-# release note:
-## 20231103: 同步综合赛相关改动点
-## 20231007: 修复随机数参数不生效问题，将 _-seed=123_ 改为 _seed 123_
-## 20230926: 规划控制专项模拟器
- 
-
-
 # __自主无人机竞速模拟器使用说明__  
 ## 简介
-    RMUA2023赛季规划控制专项模拟器
+    RMUA2025赛季模拟器
 
 ## 官方测试环境
 > ros-noetic  
@@ -17,7 +10,7 @@
 ### 注意：若使用神经网络，建议使用双显卡以保证模拟器性能
 
 ## 使用说明
-1. ## 安装Nvidia-Docker  
+## 1. 安装Nvidia-Docker  
 >确保已安装 Nvidia 驱动  
 ----
 >安装docker
@@ -40,7 +33,7 @@
 >+ `sudo gpasswd -a $USER docker`  
 >+ 注销账户并重新登录使新的用户组生效
 >+ sudo service docker restart
-2. ## 安装ROS-Noetic 
+## 2. 安装ROS-Noetic 
 >+ `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`   
 >+ `sudo apt install curl `  
 >+ `curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -`   
@@ -48,52 +41,57 @@
 >+ `sudo apt install ros-noetic-desktop-full`
 >+ `sudo apt install python3-catkin-tools`
 
-3. ## 使用模拟器
+## 3. 使用模拟器
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/uasim_2302_student_231101_r1_shipping.zip`  
->+ `unzip uasim_2302_student_231101_r1_shipping.zip`  
+>+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/rmua2025-stu-v1.0.zip`  
+>+ `unzip rmua2025-stu-v1.0.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
->+ 渲染模式  `./run_simulator.sh`  
->+ 后台模式  `./run_simulator_offscreen.sh`     
-注意：脚本中的 _seed_ 参数为模拟器的随机种子，可根据需要修改   
+>+ 渲染模式  `./run_simulator.sh 123`  
+>+ 后台模式  `./run_simulator_offscreen.sh 123`     
+注意：123 为随机种子参数，不同的种子对应不同的配置   
 ![pic](./docs/渲染模式.png) 
 >+ 使用ros查看主题  
 >+ `source /opt/ros/noetic/setup.bash`    
 >+ `rostopic list`    
-![pic](./docs/topic2.png)   
 
 ### Docker启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator` 
->+ `docker build -t simulator02 .`  
+>+ `docker build -t simulator01 .`  
 >+ `./run_docker_simulator.sh 123`  
 注意：Docker仅支持后台模式运行,启动脚本后第一个参数 _123_ 是模拟器的随机种子，可根据需要修改     
 >+ 使用ros查看主题    
 >+ `source /opt/ros/noetic/setup.bash`     
 >+ `rostopic list`    
-![pic](./docs/topic2.png)  
 
-## ros数据交互
-![pic](./docs/5.png)   
+## ros数据交互  
 >用于获取数据的可订阅的主题  
 >+ 前视相机   
-`/airsim_node/drone_1/front_center/Scene`  
->+ 前视深度相机  
-`/airsim_node/drone_1/front_left/DepthPlanar`
+`/airsim_node/drone_1/front_left/Scene`  
+`/airsim_node/drone_1/front_right/Scene`
+>+ 后视相机  
+`/airsim_node/drone_1/back_left/Scene`  
+`/airsim_node/drone_1/back_right/Scene`  
 >+ imu数据  
 `/airsim_node/drone_1/imu/imu`
+>+ 雷达数据  
+`/airsim_node/drone_1/lidar`
 >+ 无人机状态真值  
-`/airsim_node/drone_1/pose_gt`
->+ 障碍圈位姿真值  
-`/airsim_node/drone_1/circle_poses_gt`  
+`/airsim_node/drone_1/debug/pose_gt`  
+>+ gps数据(含带误差姿态)  
+`/airsim_node/drone_1/gps`  
 >+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
-`/airsim_node/drone_1/rotor_pwm`  
-----
+`/airsim_node/drone_1/debug/rotor_pwm`  
+>+ 起始位姿  
+`/airsim_node/initial_pose`  
+>+ 终点位置  
+`/airsim_node/end_goal`  
+---- 
 >用于发送指令的主题
->+ 角速度推力控制  
-`/airsim_node/drone_1/angle_rate_throttle_frame`
->+ PWM控制  
+>+ 速度控制  
+`/airsim_node/drone_1/vel_cmd_body_frame`  
+>+ PWM控制(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/rotor_pwm_cmd`
 ----
 >可用服务   
@@ -104,12 +102,25 @@
 >+ 重置   
 `/airsim_node/reset` 
 
+## 系统相关参数
+> 无人机系统参数  
+>+ 质量 0.9kg    
+>+ 轴距（电机至机体中心）0.18米  
+>+ 转动惯量 Ixx 0.0046890742, Iyy 0.0069312, Izz 0.010421166  
+>+ 电机升力系数 0.000367717  
+>+ 电机反扭力系数 4.888486266072161e-06  
+>+ 最大转速 11079.03 转每分钟
+----
+> 标定板参数
+>+ 行数（内点）8  
+>+ 列数（内点）11  
+>+ 方块边长 0.06 米  
+
 
 ## Q&A
 
 ### 找不到数据类型
 > 使用rqt_topic时发现一些数据类型缺失，需要source官方开发案例教程中basic_dev中的airsim_ros包。具体请参考: https://github.com/RoboMaster/IntelligentUAVChampionshipBase
-![pic](./docs/no_data_type.png)  
 
 
 ### 帧率波动

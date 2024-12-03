@@ -1,86 +1,153 @@
 {
-    "SettingsVersion": 1.2,
-    "SimMode": "Multirotor",
-    "DefaultVehicleConfig": "SimpleFlight",
-    "ViewMode": "FlyWithMe",
-    "UsageScenario": "",
-    "RpcEnabled": false,
-    "RecordUIVisible": false,
-    "Recording": {
-        "RecordOnMove": false,
-        "Enabled": false
-    },
-    "CameraDefaults": {
-        "CaptureSettings": [
-            {
-                "ImageType": 0,
-                "Width": 640,
-                "Height": 480,
-                "FOV_Degrees": 90,
-                "AutoExposureSpeed": 100,
-                "AutoExposureBias": 0,
-                "AutoExposureMaxBrightness": 0.64,
-                "AutoExposureMinBrightness": 0.03,
-                "MotionBlurAmount": 0,
-                "TargetGamma": 1.0
+   "SettingsVersion":1.2,
+   "SimMode":"Multirotor",
+   "DefaultVehicleConfig":"SimpleFlight",
+   "ViewMode":"FlyWithMe",
+   "UsageScenario":"",
+   "RpcEnabled":false,
+   "RecordUIVisible":false,
+   "Recording":{
+      "RecordOnMove":false,
+      "Enabled":false
+   },
+   "CameraDefaults":{
+      "CaptureSettings":[
+         {
+            "ImageType":0,
+            "Width":960,
+            "Height":720,
+            "FOV_Degrees":60,
+            "AutoExposureSpeed":100,
+            "AutoExposureBias":0,
+            "AutoExposureMaxBrightness":0.64,
+            "AutoExposureMinBrightness":0.03,
+            "MotionBlurAmount":0,
+            "TargetGamma":1
+         }
+      ],
+      "NoiseSettings":[
+         {
+            "ImageType":0,
+            "Enabled":true,
+            "RandContrib":0.2,
+            "RandSpeed":100000,
+            "RandSize":1000,
+            "RandDensity":6.5,
+            "HorzWaveContrib":0,
+            "HorzWaveStrength":0.08,
+            "HorzWaveVertSize":1,
+            "HorzWaveScreenSize":1,
+            "HorzNoiseLinesContrib":0,
+            "HorzNoiseLinesDensityY":0.01,
+            "HorzNoiseLinesDensityXY":0.5,
+            "HorzDistortionContrib":0,
+            "HorzDistortionStrength":0.002
+         }
+      ]
+   },
+   "Vehicles":{
+      "drone_1":{
+         "VehicleType":"SimpleFlight",
+         "DefaultVehicleState":"Armed",
+         "EnableCollisionPassthrogh":false,
+         "EnableCollisions":true,
+         "AllowAPIAlways":true,
+         "RC":{
+            "RemoteControlID":0,
+            "AllowAPIWhenDisconnected":true
+         },
+         "Sensors":{
+            "lidar":{
+               "SensorType":6,
+               "Enabled":true,
+               "NumberOfChannels":32,
+               "RotationsPerSecond":10,
+               "PointsPerSecond":200000,
+               "X":0,
+               "Y":0,
+               "Z":-0.05,
+               "Roll":0,
+               "Pitch":0,
+               "Yaw":0,
+               "VerticalFOVUpper":52,
+               "VerticalFOVLower":-7,
+               "HorizontalFOVStart":-180,
+               "HorizontalFOVEnd":180,
+               "DrawDebugPoints":false,
+               "DataFrame":"SensorLocalFrame",
+               "Range":30
             }
-        ],
-        "NoiseSettings": [
-            {
-                "ImageType": 0,
-                "Enabled": true,
-                "RandContrib": 0.2,
-                "RandSpeed": 100000.0,
-                "RandSize": 1000.0,
-                "RandDensity": 6.5,
-                "HorzWaveContrib": 0,
-                "HorzWaveStrength": 0.08,
-                "HorzWaveVertSize": 1.0,
-                "HorzWaveScreenSize": 1.0,
-                "HorzNoiseLinesContrib": 0,
-                "HorzNoiseLinesDensityY": 0.01,
-                "HorzNoiseLinesDensityXY": 0.5,
-                "HorzDistortionContrib": 0,
-                "HorzDistortionStrength": 0.002
-            }
-        ]
-    },
-    "Vehicles": {
-        "drone_1": {
-            "VehicleType": "SimpleFlight",
-            "DefaultVehicleState": "Armed",
-            "EnableCollisionPassthrogh": false,
-            "EnableCollisions": true,
-            "AllowAPIAlways": true,
-            "RC": {
-                "RemoteControlID": 0,
-                "AllowAPIWhenDisconnected": false
+         },
+         "Cameras":{
+            "front_left":{
+               "CaptureSettings":[
+                  {
+                     "ImageType":0,
+                     "Width": 960,
+                     "Height":720,
+                     "FOV_Degrees":60,
+                     "TargetGamma":1
+                  }
+               ],
+               "X": 0.175,
+          	"Y": -0.15,
+          	"Z": 0,
+               "Pitch":0,
+               "Roll":0,
+               "Yaw":0
             },
-            "Cameras": {
-                "front_center": {
-                    "CaptureSettings": [
-                        {
-                            "ImageType": 0,
-                            "Width": 640,
-                            "Height": 480,
-                            "FOV_Degrees": 90,
-                            "TargetGamma": 1.0
-                        },
-                        {
-                            "ImageType": 1,
-                            "Width": 640,
-                            "Height": 480,
-                            "FOV_Degrees": 90
-                        }
-                    ],
-                    "X": 0.26,
-                    "Y": 0,
-                    "Z": 0,
-                    "Pitch": 0,
-                    "Roll": 0,
-                    "Yaw": 0
-                }
+            "front_right":{
+               "CaptureSettings":[
+                  {
+                     "ImageType":0,
+                     "Width": 960,
+                     "Height":720,
+                     "FOV_Degrees":60,
+                     "TargetGamma":1
+                  }
+               ],
+               "X": 0.175,
+          	"Y": 0.15,
+          	"Z": 0,
+               "Pitch":0,
+               "Roll":0,
+               "Yaw":0
+            },
+            "back_left":{
+               "CaptureSettings":[
+                  {
+                     "ImageType":0,
+                     "Width": 960,
+                     "Height":720,
+                     "FOV_Degrees":60,
+                     "TargetGamma":1
+                  }
+               ],
+               "X": -0.175,
+          	"Y": 0.15,
+          	"Z": 0,
+               "Pitch":0,
+               "Roll":0,
+               "Yaw":180
+            },
+            "back_right":{
+               "CaptureSettings":[
+                  {
+                     "ImageType":0,
+                     "Width": 960,
+                     "Height":720,
+                     "FOV_Degrees":60,
+                     "TargetGamma":1
+                  }
+               ],
+               "X": -0.175,
+          	"Y": -0.15,
+          	"Z": 0,
+               "Pitch":0,
+               "Roll":0,
+               "Yaw":180
             }
-        }
-    }
+         }
+      }
+   }
 }
