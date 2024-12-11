@@ -1,7 +1,10 @@
 # release note
 ## 20241209
->+ 修复中央枢纽空气墙问题；
->+ 修复雷达时间戳不稳定的问题
+>+ 修复中央枢纽空气墙问题  
+>+ 修复雷达时间戳不稳定的问题  
+## 20241211
+>+ 修复中央枢纽出入口动力丢失问题  
+>+ 性能优化，改善引擎卡顿导致的imu时钟错乱问题； 
 
 # __自主无人机竞速模拟器使用说明__  
 ## 简介
@@ -49,8 +52,8 @@
 ## 3. 使用模拟器
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA20241209.zip`  
->+ `unzip RMUA20241209.zip`  
+>+ `wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`  
+>+ `unzip RMUA2024121102.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
 >+ 渲染模式  `./run_simulator.sh 123`  
