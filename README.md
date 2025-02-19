@@ -92,7 +92,7 @@
 `/airsim_node/drone_1/debug/pose_gt`  
 >+ gps数据(含带误差姿态)  
 `/airsim_node/drone_1/gps`
->+ 风速计  
+>+ 风速计(复赛内容)  
 `airsim_node/drone_1/debug/wind`
 >+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/debug/rotor_pwm`
@@ -108,7 +108,7 @@
 `/airsim_node/drone_1/rotor_pwm_cmd`
 ----
 >可用服务
->+ 工厂巡检数据上报  
+>+ 工厂巡检数据上报(复赛内容)  
 index:(0 第一个工厂； 1 第二个工厂)  value:(仪表数值)  
 `/airsim_node/meter_report`  
 >+ 起飞   
