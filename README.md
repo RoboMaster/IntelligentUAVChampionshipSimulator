@@ -91,13 +91,15 @@
 >+ 无人机状态真值  
 `/airsim_node/drone_1/debug/pose_gt`  
 >+ gps数据(含带误差姿态)  
-`/airsim_node/drone_1/gps`  
+`/airsim_node/drone_1/gps`
+>= 风速计
+`airsim_node/drone_1/debug/wind`
 >+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/debug/rotor_pwm`
 >+ 起始位姿  
 `/airsim_node/initial_pose`  
 >+ 终点位置  
-`/airsim_node/end_goal`  
+`/airsim_node/end_goal`
 ---- 
 >用于发送指令的主题
 >+ 速度控制  
