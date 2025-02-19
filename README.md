@@ -92,7 +92,7 @@
 `/airsim_node/drone_1/debug/pose_gt`  
 >+ gps数据(含带误差姿态)  
 `/airsim_node/drone_1/gps`
->= 风速计
+>+ 风速计
 `airsim_node/drone_1/debug/wind`
 >+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/debug/rotor_pwm`
