@@ -54,8 +54,8 @@
 ## 3. 使用模拟器
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ 初赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`
->+ 复赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.2.zip` 
+>+ 初赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`  
+>+ 复赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.2.zip`  
 >+ `unzip RMUA2024121102.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
@@ -92,7 +92,7 @@
 `/airsim_node/drone_1/debug/pose_gt`  
 >+ gps数据(含带误差姿态)  
 `/airsim_node/drone_1/gps`
->+ 风速计
+>+ 风速计  
 `airsim_node/drone_1/debug/wind`
 >+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/debug/rotor_pwm`
@@ -108,9 +108,9 @@
 `/airsim_node/drone_1/rotor_pwm_cmd`
 ----
 >可用服务
->+ 工厂巡检数据上报
-index:(0 第一个工厂； 1 第二个工厂)  value:(仪表数值)
-`/airsim_node/meter_report`
+>+ 工厂巡检数据上报  
+index:(0 第一个工厂； 1 第二个工厂)  value:(仪表数值)  
+`/airsim_node/meter_report`  
 >+ 起飞   
 `/airsim_node/drone_1/takeoff`   
 >+ 降落   
