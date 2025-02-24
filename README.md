@@ -1,4 +1,6 @@
 # release note
+## 20250224
+>+ 修复工厂内gps不失效问题
 ## 20250219
 >+ 增加复赛模拟器，包含工厂巡检任务、侧风以及风速计
 ## 20241209
@@ -55,7 +57,7 @@
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
 >+ 初赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`  
->+ 复赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.2.zip`  
+>+ 复赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.3.zip`  
 >+ `unzip RMUA2024121102.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
