@@ -1,4 +1,6 @@
 # release note
+## 20250319
+>+ 修复IMU时间戳错误
 ## 20250227
 >+ 增大工厂内仪表盘大小
 >+ 修复工厂出入口动力丢失问题
@@ -60,7 +62,7 @@
 ### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
 >+ 初赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`  
->+ 复赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.4.zip`  
+>+ 复赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.7.zip`  
 >+ `unzip RMUA2024121102.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
