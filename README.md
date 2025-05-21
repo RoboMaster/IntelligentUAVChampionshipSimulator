@@ -1,4 +1,6 @@
 # release note
+## 20250521
+>+ 修复工厂读数范围判断问题
 ## 20250424
 >+ 增加决赛模拟器
 ## 20250319
@@ -65,7 +67,7 @@
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
 >+ 初赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`  
 >+ 复赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.7.zip`
->+ 决赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.12.zip`  
+>+ 决赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.13.zip`  
 >+ `unzip RMUA2024121102.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
