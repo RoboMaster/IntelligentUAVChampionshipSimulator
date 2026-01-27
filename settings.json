@@ -10,6 +10,12 @@
       "RecordOnMove":false,
       "Enabled":false
    },
+   "CameraDirector":{
+   	"X": -1,
+   	"Y": 0,
+   	"Z": -0.6,
+   	"FollowDistance": -1
+   },
    "CameraDefaults":{
       "CaptureSettings":[
          {
@@ -69,8 +75,8 @@
                "Roll":0,
                "Pitch":0,
                "Yaw":0,
-               "VerticalFOVUpper":52,
-               "VerticalFOVLower":-7,
+               "VerticalFOVUpper":40,
+               "VerticalFOVLower":-19,
                "HorizontalFOVStart":-180,
                "HorizontalFOVEnd":180,
                "DrawDebugPoints":false,
