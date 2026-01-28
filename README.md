@@ -1,3 +1,24 @@
+# release note
+## 20250521
+>+ 修复工厂读数范围判断问题
+## 20250424
+>+ 增加决赛模拟器
+## 20250319
+>+ 修复IMU时间戳错误
+## 20250227
+>+ 增大工厂内仪表盘大小
+>+ 修复工厂出入口动力丢失问题
+## 20250224
+>+ 修复工厂内gps不失效问题
+## 20250219
+>+ 增加复赛模拟器，包含工厂巡检任务、侧风以及风速计
+## 20241209
+>+ 修复中央枢纽空气墙问题  
+>+ 修复雷达时间戳不稳定的问题  
+## 20241211
+>+ 修复中央枢纽出入口动力丢失问题  
+>+ 性能优化，改善引擎卡顿导致的imu时钟错乱问题； 
+
 # __自主无人机竞速模拟器使用说明__  
 ## 简介
     RMUA2025赛季模拟器
@@ -5,7 +26,7 @@
 ## 官方测试环境
 > ros-noetic  
 > ubuntu20.04  
-> NVIDIA RTX3090TI gpu   
+> NVIDIA RTX3060TI gpu   
 > INTEL I7 12th cpu  
 ### 注意：若使用神经网络，建议使用双显卡以保证模拟器性能
 
@@ -42,10 +63,12 @@
 >+ `sudo apt install python3-catkin-tools`
 
 ## 3. 使用模拟器
-### 本机启动 
+### 本机启动
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ 模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`  
->+ `unzip RMUA2024121102.zip`   
+>+ 初赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`  
+>+ 复赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.7.zip`
+>+ 决赛模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024_11.0.1.13.zip`  
+>+ `unzip RMUA2024121102.zip`  
 >+ `mkdir ~/Documents/AirSim`  
 >+ `cp settings.json ~/Documents/AirSim`   
 >+ 渲染模式  `./run_simulator.sh 123`  
@@ -81,7 +104,7 @@
 `/airsim_node/drone_1/debug/pose_gt`  
 >+ gps数据(含带误差姿态)  
 `/airsim_node/drone_1/gps`
->+ 风速计  
+>+ 风速计(复赛内容)  
 `airsim_node/drone_1/debug/wind`
 >+ 电机输入PWM信号(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/debug/rotor_pwm`
@@ -91,7 +114,7 @@
 `/airsim_node/end_goal`
 ---- 
 >用于发送指令的主题
->+ 速度控制(0:x轴速度, 1:y轴速度, 2:z轴速度, 3:角速度，4:xy轴加速度(上限为8m/s2),5:是否急停(1表示急停))  
+>+ 速度控制  
 `/airsim_node/drone_1/vel_cmd_body_frame`  
 >+ PWM控制(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/rotor_pwm_cmd`
@@ -125,12 +148,11 @@ index:(0 第一个工厂； 1 第二个工厂)  value:(仪表数值)
 ## Q&A
 
 ### 找不到数据类型
-> 开发速度控制ros通信所需的msg文件，可查阅VelCmdmsg文件夹
-> 使用rqt_topic时发现一些数据类型缺失，可参考source官方开发案例教程中basic_dev中的airsim_ros包。具体请参考: https://github.com/RoboMaster/IntelligentUAVChampionshipBase
+> 使用rqt_topic时发现一些数据类型缺失，需要source官方开发案例教程中basic_dev中的airsim_ros包。具体请参考: https://github.com/RoboMaster/IntelligentUAVChampionshipBase
 
 
 ### 帧率波动
-> 当帧率波动严重时，可以更换更高性能的显卡。    
+> 当帧率波动严重时，可以更换更高性能的显卡。使用3090显卡进行测试，连续运行1个小时，模拟器帧率波动维持在0.5%以下。    
 也可以关闭不需要的相机降低模拟器性能需求，提升帧率稳定性。
 对于本机启动，仅需要把 _~/Documents/AirSim/settings.json_ 中相应相机配置删除即可关闭该相机。  
 对于docker启动，需要把 _/path/to/IntelligentUAVChampionshipSimulator_ 中的 _settings.json_ 中相应相机配置删除后重新构建镜像即可。   
