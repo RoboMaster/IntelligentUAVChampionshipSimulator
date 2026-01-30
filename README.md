@@ -1,6 +1,6 @@
 # __自主无人机竞速模拟器使用说明__  
 ## 简介
-    RMUA2025赛季模拟器
+    RMUA2026赛季模拟器
 
 ## 官方测试环境
 > ros-noetic  
@@ -44,10 +44,8 @@
 ## 3. 使用模拟器
 ### 本机启动 
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ 模拟器：`wget https://stg-robomasters-hz-q0o2.oss-cn-hangzhou.aliyuncs.com/RMUA2024121102.zip`  
->+ `unzip RMUA2024121102.zip`   
->+ `mkdir ~/Documents/AirSim`  
->+ `cp settings.json ~/Documents/AirSim`   
+>+ 模拟器：`wget https://sz-rm-rmua-dispatch-prod.oss-cn-shenzhen-internal.aliyuncs.com/0e954d75cf7e0afdba0d2dea27a08295/simulator_12.0.0.3.zip`  
+>+ `unzip simulator_12.0.0.3.zip`    
 >+ 渲染模式  `./run_simulator.sh 123`  
 >+ 后台模式  `./run_simulator_offscreen.sh 123`     
 注意：123 为随机种子参数，不同的种子对应不同的配置   
@@ -91,14 +89,14 @@
 `/airsim_node/end_goal`
 ---- 
 >用于发送指令的主题
->+ 速度控制(0:x轴速度, 1:y轴速度, 2:z轴速度, 3:角速度，4:xy轴加速度(上限为8m/s2),5:是否急停(1表示急停))  
+>+ 速度控制(0:x轴速度, 1:y轴速度, 2:z轴速度, 3:角速度，4:加速度(上限为8m/s2),5:是否急停(1表示急停))  
 `/airsim_node/drone_1/vel_cmd_body_frame`  
 >+ PWM控制(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/rotor_pwm_cmd`
 ----
 >可用服务
->+ 工厂巡检数据上报(复赛内容)  
-index:(0 第一个工厂； 1 第二个工厂)  value:(仪表数值)  
+>+ 工厂巡检数据上报  
+index:(0 每条路径的中央枢纽前工厂； 1 每条路径的中央枢纽后工厂)  value:(仪表数值)  
 `/airsim_node/meter_report`  
 >+ 起飞   
 `/airsim_node/drone_1/takeoff`   
@@ -124,6 +122,19 @@ index:(0 第一个工厂； 1 第二个工厂)  value:(仪表数值)
 
 ## Q&A
 
+### 速度控制描述
+>速度控制仅提供基础飞控，保证静止无风时可悬停，但限制最高加速度，并且出现大幅速度变化时会出现姿态波动，如需要更稳定的飞控，建议使用pwm控制
+>此处的加速度是标量，表示x轴与y轴速度变成预期速度（速度控制中输入的数值）的快慢，最高为8m/s2，超过8的数值按8进行处理，
+示例：无人机初始速度为0，此时x轴速度输入为8，加速度输入为8，x轴速度会线性增加，1s后，x轴速度从0变为8m/s
+>速度控制的第五个参数，表示是否需要急停，当输入为1时，会忽略所有输入，速度瞬间归零进入悬停状态，但飞机会有姿态变化，急停前速度越快，急停时姿态变化越大
+
+### 工厂巡检数据上报
+>工厂巡检数据上报服务输入参数index的0表示每条路径的中央枢纽前工厂，1表示每条路径的中央枢纽后工厂
+>示例：8-12路径，在中央枢纽前进入工厂后，输入index为0进行上报，中央枢纽后无需进入工厂巡检上报；12-10路径，在中央枢纽前进入工厂后，输入index为0进行上报，在中央枢纽后进入工厂后，输入index为1进行上报；
+
+### 调试配置表
+>在模拟器路径下的 _/Build/LinuxNoEditor/RMUA/Content/Configs/GameConfig.json_ 的json文件中有两个字段IgnoreAllHitCollision，IgnoreOverTime，第一个字段设置为true后，撞击不会导致比赛结束，第二个字段设置为true后，超时不会导致比赛结束。可酌情使用，便于调试。
+
 ### 找不到数据类型
 > 开发速度控制ros通信所需的msg文件，可查阅VelCmdmsg文件夹
 > 使用rqt_topic时发现一些数据类型缺失，可参考source官方开发案例教程中basic_dev中的airsim_ros包。具体请参考: https://github.com/RoboMaster/IntelligentUAVChampionshipBase
@@ -132,7 +143,7 @@ index:(0 第一个工厂； 1 第二个工厂)  value:(仪表数值)
 ### 帧率波动
 > 当帧率波动严重时，可以更换更高性能的显卡。    
 也可以关闭不需要的相机降低模拟器性能需求，提升帧率稳定性。
-对于本机启动，仅需要把 _~/Documents/AirSim/settings.json_ 中相应相机配置删除即可关闭该相机。  
+对于本机启动，仅需要把 _/path/to/IntelligentUAVChampionshipSimulator_ 中的 _settings.json_ 中相应相机配置删除即可关闭该相机。  
 对于docker启动，需要把 _/path/to/IntelligentUAVChampionshipSimulator_ 中的 _settings.json_ 中相应相机配置删除后重新构建镜像即可。   
 ![pic](./docs/关闭相机.png)   
 
