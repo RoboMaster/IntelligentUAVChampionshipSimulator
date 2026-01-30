@@ -98,12 +98,6 @@
 >+ 工厂巡检数据上报  
 index:(0 每条路径的中央枢纽前工厂； 1 每条路径的中央枢纽后工厂)  value:(仪表数值)  
 `/airsim_node/meter_report`  
->+ 起飞   
-`/airsim_node/drone_1/takeoff`   
->+ 降落   
-`/airsim_node/drone_1/land`   
->+ 重置   
-`/airsim_node/reset` 
 
 ## 系统相关参数
 > 无人机系统参数  
