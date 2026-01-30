@@ -44,7 +44,7 @@
 ## 3. 使用模拟器
 ### 本机启动 
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ 模拟器：`wget https://sz-rm-rmua-dispatch-prod.oss-cn-shenzhen-internal.aliyuncs.com/0e954d75cf7e0afdba0d2dea27a08295/simulator_12.0.0.3.zip`  
+>+ 模拟器：`wget https://sz-rm-rmua-dispatch-prod.oss-cn-shenzhen.aliyuncs.com/0e954d75cf7e0afdba0d2dea27a08295/simulator_12.0.0.3.zip`  
 >+ `unzip simulator_12.0.0.3.zip`    
 >+ 渲染模式  `./run_simulator.sh 123`  
 >+ 后台模式  `./run_simulator_offscreen.sh 123`     
@@ -135,7 +135,7 @@ index:(0 每条路径的中央枢纽前工厂； 1 每条路径的中央枢纽�
 ### 找不到数据类型
 > 开发速度控制ros通信所需的msg文件，可查阅VelCmdmsg文件夹
 
-> 使用rqt_topic时发现一些数据类型缺失，可参考source官方开发案例教程中basic_dev中的airsim_ros包。具体请参考: https://github.com/RoboMaster/IntelligentUAVChampionshipBase
+> 使用rqt_topic时发现一些数据类型缺失，可参考source官方开发案例教程中basic_dev中的airsim_ros包。具体请参考: https://github.com/RoboMaster/IntelligentUAVChampionshipBase/tree/RMUA2026
 
 
 ### 帧率波动
