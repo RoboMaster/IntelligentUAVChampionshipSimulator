@@ -44,8 +44,8 @@
 ## 3. 使用模拟器
 ### 本机启动 
 >+ `cd /path/to/IntelligentUAVChampionshipSimulator`  
->+ 模拟器：`wget https://sz-rm-rmua-dispatch-prod.oss-cn-shenzhen.aliyuncs.com/0241dbf7855f3560410e16fbeb68fcba/simulator_12.0.0.4.zip`  
->+ `unzip simulator_12.0.0.4.zip`   
+>+ 模拟器：`wget https://sz-rm-rmua-dispatch-prod.oss-cn-shenzhen.aliyuncs.com/4035443c915085ab1bd01d383fe84fbe/simulator_12.0.0.3.zip`  
+>+ `unzip simulator_12.0.0.3.zip`   
 >+ 将此GitHub工程的所有文件下载到模拟器解压后的build文件夹同级目录中（注：不是放入build文件夹中） 
 >+ 渲染模式  `./run_simulator.sh 123`  
 >+ 后台模式  `./run_simulator_offscreen.sh 123`     
