@@ -25,7 +25,7 @@ RUN apt-get install -y --no-install-recommends iproute2 iputils-ping\
 ADD start.bash /usr/local/
 RUN chmod +x /usr/local/start.bash
 # ADD Build /usr/local/
-ADD https://sz-rm-rmua-dispatch-prod.oss-cn-shenzhen.aliyuncs.com/0241dbf7855f3560410e16fbeb68fcba/simulator_12.0.0.4.zip /usr/local/
+ADD https://sz-rm-rmua-dispatch-prod.oss-cn-shenzhen.aliyuncs.com/b39a0194e982f0d987153c6016feb325/simulator_12.0.0.5.zip /usr/local/
 RUN cd /usr/local/ && unzip -o RMUA2024121102.zip && mv Build/LinuxNoEditor /usr/local/
 ADD settings.json /usr/local/LinuxNoEditor/RMUA/Binaries/Linux/
 
