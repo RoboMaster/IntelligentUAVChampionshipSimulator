@@ -91,7 +91,7 @@
 ---- 
 >用于发送指令的主题
 >+ 速度控制(0:x轴速度, 1:y轴速度, 2:z轴速度, 3:角速度，4:加速度(上限为8m/s2),5:是否急停(1表示急停))  
-`/airsim_node/drone_1/vel_cmd_body_frame`  
+`/airsim_node/drone_1/vel_body_cmd`  
 >+ PWM控制(0:右前, 1:左后, 2:左前, 3:右后)  
 `/airsim_node/drone_1/rotor_pwm_cmd`
 ----
